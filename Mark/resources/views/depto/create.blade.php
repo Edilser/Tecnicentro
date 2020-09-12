@@ -53,6 +53,7 @@
                                                 <span>Departamento</span>
                                             </div>
                                             <div class="col-md-8">
+                                            
                                                 <input type="text" id="depto"
                                                     class="form-control"
                                                     name="depto" placeholder="Departamento"

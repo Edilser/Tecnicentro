@@ -116,8 +116,11 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
-    'LettersWhiteSpaces' => 'Los valores deben ser letras',
-    'OnlyNumbers' => 'El valor debe ser un numero de 14 digitos',
+    'LettersWhiteSpaces' => 'Los valores deben ser unicamente letras',
+    'DPIMessage' => 'El DPI debe ser un numero de 14 digitos',
+    'NombreMessage' => 'Debe colocar unicamente un Nombre',
+    'ApellidoMessage' => 'Debe colocar unicamente un Apellido',
+    'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

@@ -1,0 +1,68 @@
+1.- composer require laravelcollective/html
+2.- composer require laravel/ui
+3.-php artisan ui bootstrap --auth
+4.-npm install
+4.0-composer dump-autoload
+4.1-npm run dev
+4.2-php artisan serve
+4.3-php artisan key:generate
+4.4-php artisan config:cache
+5.-php artisan migrate
+5.1 if error for old database login: ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'crashman'; 
+6.-ALTERNO
+		https://labs.infyom.com/laravelgenerator/docs/7.0/installation
+		composer.json
+			"require": {
+						    "infyomlabs/laravel-generator": "7.0.x-dev",
+						    "laravelcollective/html": "^6.1",
+						    "infyomlabs/adminlte-templates": "7.0.x-dev"
+						} 
+		config/app.php
+		'Form'      => Collective\Html\FormFacade::class,
+		'Html'      => Collective\Html\HtmlFacade::class,
+		'Flash'     => Laracasts\Flash\Flash::class,
+
+		php artisan vendor:publish
+
+		App\Providers\RouteServiceProvider.php
+		mapApiRoutes
+
+		Route::prefix('api')
+		    ->middleware('api')
+		    ->as('api.')
+		    ->namespace($vthis->namespace."\\API")
+		    ->group(base_path('routes/api.php')); 
+
+		php artisan infyom:publish
+
+		**could exist 
+			composer require laravel/ui
+			php artisan ui bootstrap --auth
+
+		php artisan infyom.publish:layout 
+
+		Auth::routes();
+		Route::get('/home', 'HomeController@index'); 
+
+php artisan cache:clear
+php artisan route:clear
+php artisan config:clear
+php artisan view:clear
+php artisan config:cache
+
+php artisan make:model --migration --controller PaisController --resource 
+php artisan make:migration create_pais_table --create=pais
+
+
+php artisan make:controller DepartamentoController --resource --model=departamento
+
+reinstall
+
+npm ci
+
+
+
+php artisan clear-compiled
+composer install --no-scripts
+composer dump-autoload
+composer update
