@@ -2,10 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\departamento;
-use App\pais;
-
+use App\departamento as departamento;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
+
+class ExportDespartamento implements FromCollection
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return departamento::get();
+    }
+}
 
 class DepartamentoController extends Controller
 {
@@ -24,12 +35,16 @@ class DepartamentoController extends Controller
 
     public function download()
     {
-
+        return Excel::download(new ExportDespartamento(), 'Departamentos.xlsx');
     }
     
     public function search(Request $request)
     {
+        $depto = departamento::where('departamento','like','%' . $request->search . '%')->paginate(10);
 
+        $depto->appends($request->all());
+
+       return view('/depto/index', compact('depto'));
     }
 
     public function delete($id)

@@ -1,11 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\departamento;
-use App\Municipio;
+use App\Municipio as municipio;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
-use App\Pais;
 
+class ExportMunicipio implements FromCollection
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return municipio::get();
+    }
+}
 
 class MunicipioController extends Controller
 {
@@ -35,12 +45,16 @@ class MunicipioController extends Controller
 
     public function download()
     {
-
+        return Excel::download(new ExportMunicipio(), 'Municipios.xlsx');
     }
     
     public function search(Request $request)
     {
+        $mun = municipio::where('municipio','like','%' . $request->search . '%')->paginate(10);
 
+        $mun->appends($request->all());
+
+       return view('/mun/index', compact('mun'));
     }
 
     /**
