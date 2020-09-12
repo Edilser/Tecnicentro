@@ -2,9 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
 use App\Pais as pais;
 
+
+class ExportPais implements FromCollection
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return pais::get();
+    }
+}
 class PaisController extends Controller
 {
     var $rules = ['pais' => 'required|regex:/^[\pL\s\-]+$/u'];
@@ -15,7 +28,7 @@ class PaisController extends Controller
 
     public function download()
     {
-
+        return Excel::download(new ExportPais(), 'Paises.xlsx');
     }
 
     public function search(Request $request)

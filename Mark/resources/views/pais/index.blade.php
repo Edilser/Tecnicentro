@@ -38,7 +38,7 @@
                                   <div>
                                     <a href="{{ route('pais.index') }}" class="btn btn-outline-primary"><i class="feather icon-align-justify"></i>   Mostrar Todos</a>
                                     <a href="{{ route('pais.create') }}" class="btn btn-outline-success"><i class="feather icon-plus"></i>   Agregar</a>
-                                    <a href="{{ route('pais.download') }}" class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar PDF</a>
+                                    <a href="{{ route('pais.download') }}" class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar</a>
                                   </div>
                                 </div>
 
