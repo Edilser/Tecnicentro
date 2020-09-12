@@ -20,10 +20,11 @@ class ExportPais implements FromCollection
 }
 class PaisController extends Controller
 {
-    var $rules = ['pais' => 'required|regex:/^[\pL\s\-]+$/u'];
+    var $rules = ['pais' => 'required|unique:pais|regex:/^[\pL\s\-]+$/u'];
     
     var $messages = ['pais.required' => 'El campo :attribute es requerido',
-                      'pais.regex' => 'El campo :attribute debe contener solamente letras'  ];
+                      'pais.regex' => 'El campo :attribute debe contener solamente letras',
+                      'pais.unique' => 'El Pais ya existe'  ];
 
 
     public function download()
