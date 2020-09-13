@@ -56,13 +56,17 @@
                                             
                                                 <input type="text" id="depto"
                                                     class="form-control"
-                                                    name="depto" placeholder="Departamento"
+                                                    name="depto" placeholder="Departamento" 
                                                     required 
                                                     data-validation-required-message='{{ __('validation.required') }}'
                                                     data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" 
                                                     data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} '   
                                                     >
                                                     <p class="help-block"></p> 
+                                                    
+                                                    @error('depto')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                             </div>
                                     </div>
                                     <div class="col-md-8 offset-md-4">

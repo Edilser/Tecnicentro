@@ -19,7 +19,8 @@ class CreateMunicipioTable extends Migration
             $table->foreignId('idDepartamento');
             $table->string('municipio');
             $table->timestamps();
-
+            
+            // $table->unique(['idPais', 'idMunicipio', 'municipio']);
             $table->foreign('idPais')->references('id')->on('pais');
             $table->foreign('idDepartamento')->references('id')->on('departamento');
         });

@@ -31,10 +31,11 @@
                                             <div class="col-md-4">
                                                 <span>Pais</span>
                                             </div>
+                                            
                                             <div class="col-md-8">
                                                 <input type="text" id="depto"
                                                 class="form-control"
-                                                name="depto" placeholder="pais"  value="{{ $depto->pais[0]->pais }}"
+                                                name="depto" placeholder="pais"  value="{{ $depto->pais->pais }}"
                                                 readonly
                                                 >
                                             </div>

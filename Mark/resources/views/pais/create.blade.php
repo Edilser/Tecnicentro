@@ -43,6 +43,7 @@
                                                     data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} ' 
                                                     value="{{ old('pais') }}"  
                                                     >
+                                                    
                                                     <p class="help-block"></p> 
                                                     @error('pais')
                                                         <div class="alert alert-danger">{{ $message }}</div>

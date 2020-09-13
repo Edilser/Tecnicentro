@@ -19,6 +19,7 @@ class CreateDepartamentoTable extends Migration
             $table->string('departamento');
             $table->timestamps();
 
+            // $table->unique(['idPais', 'departamento']);
             $table->foreign('idPais')->references('id')->on('pais');
 
         });

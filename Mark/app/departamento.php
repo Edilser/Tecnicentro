@@ -17,6 +17,8 @@ class departamento extends Model
     'id',
   ];
 
+  
+
   public function pais () {
     return $this->hasOne(pais::class, 'id', 'idPais');
   }

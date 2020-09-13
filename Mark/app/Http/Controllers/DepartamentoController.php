@@ -6,42 +6,50 @@ use App\departamento;
 use App\pais;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Validator;
 
 class DepartamentoController extends Controller
 {
 
-    public function searchByCountry($id){
+    public function searchByCountry($id)
+    {
         $depto = departamento::where('idPais', $id)->get();
         $depto = $depto->makeVisible('id');
         return json_encode($depto);
     }
 
-    var $rules = ['depto' => 'required|regex:/^[\pL\s\-]+$/u'];
-    
-    var $messages = ['depto.required' => 'El campo :attribute es requerido',
-                      'depto.regex' => 'El campo :attribute debe contener solamente letras'  ];
+    var $rules = [
+        'depto' => 'required|regex:/^[\pL\s\-]+$/u',
+        'pais' =>  'required'
+    ];
+
+    var $messages = [
+        'depto.required' => 'El campo :attribute es requerido',
+        'depto.regex' => 'El campo :attribute debe contener solamente letras',
+        'departamento' => 'La combinacion ya existe'
+    ];
 
 
     public function download()
     {
-
     }
-    
+
     public function search(Request $request)
     {
-
     }
 
     public function delete($id)
     {
         $depto = departamento::with('pais')->find($id);
-        
+
         $breadcrumbs = [
-            ['link'=>"/",'name'=>"Home"],['link'=>"/depto",'name'=>"Departamento"],['name'=>"Eliminar"]];
-        
-            return view('depto/del',compact('depto','id'), ['breadcrumbs' => $breadcrumbs]);
+            ['link' => "/", 'name' => "Home"], ['link' => "/depto", 'name' => "Departamento"], ['name' => "Eliminar"]
+        ];
+
+        return view('depto/del', compact('depto', 'id'), ['breadcrumbs' => $breadcrumbs]);
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -50,10 +58,11 @@ class DepartamentoController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Departamentos"]];
-    
+            ['link' => "/home", 'name' => "Home"], ['name' => "Departamentos"]
+        ];
+
         $depto = departamento::with('pais')->paginate(10);
-        
+
         return view('/depto/index', compact('depto'), ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -64,12 +73,13 @@ class DepartamentoController extends Controller
      */
     public function create()
     {
-        
+
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Nuevo Departamento"]];
-    
+            ['link' => "/home", 'name' => "Home"], ['name' => "Nuevo Departamento"]
+        ];
+
         $pais = pais::all();
-        
+
         return view('/depto/create', compact('pais'), ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -81,15 +91,31 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->rules,$this->messages);
+
+
+        $rules = [
+            'depto' => [Rule::unique('departamento', 'departamento')->where(function ($query) use ($request) {
+                return $query->where('idPais', '=', $request->pais);
+            }),]
+        ];
+
+        $messages = [
+            'depto.unique' => 'Ya existe la informacion ingresada',
+        ];
+
+        $this->validate($request, $rules,$messages);
 
         $depto = new departamento();
         $depto->idpais = $request->pais;
         $depto->departamento = $request->depto;
+
+        $this->validate(
+            $request,
+            [Rule::unique('depto')->where('departamento', $request->depto)]
+        );
+
         $depto->save();
-        return redirect ('depto')->with('success', 'Departamento guardado');
-
-
+        return redirect('depto')->with('success', 'Departamento guardado');
     }
 
     /**
@@ -112,14 +138,15 @@ class DepartamentoController extends Controller
     public function edit($id)
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Editar"]];
-    
+            ['link' => "/home", 'name' => "Home"], ['name' => "Editar"]
+        ];
+
         $depto = departamento::find($id);
-        
+
 
         $pais = pais::all();
-        
-        return view('/depto/edit', compact('id','depto','pais'), ['breadcrumbs' => $breadcrumbs]);
+
+        return view('/depto/edit', compact('id', 'depto', 'pais'), ['breadcrumbs' => $breadcrumbs]);
     }
 
     /**
@@ -136,7 +163,7 @@ class DepartamentoController extends Controller
         $depto = departamento::find($id);
         $depto->departamento = $request->depto;
         $depto->save();
-        return redirect('depto')->with('success','Guardado Satisfactoriamente')->withInput();
+        return redirect('depto')->with('success', 'Guardado Satisfactoriamente')->withInput();
     }
 
     /**
@@ -149,6 +176,6 @@ class DepartamentoController extends Controller
     {
         $depto = departamento::find($id);
         $depto->delete();
-        return redirect('depto')->with('success','Eliminado Satisfactoriamente');
+        return redirect('depto')->with('success', 'Eliminado Satisfactoriamente');
     }
 }
