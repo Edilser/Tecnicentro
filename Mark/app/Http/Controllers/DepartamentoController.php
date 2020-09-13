@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\departamento as departamento;
+use App\Pais;
+
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
@@ -49,7 +51,9 @@ class DepartamentoController extends Controller
 
     public function search(Request $request)
     {
-        $depto = departamento::where('departamento','like','%' . $request->search . '%')->paginate(10);
+        $depto = departamento::whereHas('pais', function($query) use ($request) {
+                    $query->where('pais','like','%' . $request->pais .'%');
+        })->orWhere('departamento','like','%' . $request->search . '%')->paginate(10);
 
         $depto->appends($request->all());
 
