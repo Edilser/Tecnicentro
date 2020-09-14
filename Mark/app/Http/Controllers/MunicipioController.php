@@ -5,6 +5,9 @@ use App\Municipio as municipio;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
+use App\Pais;
+use App\departamento;
+use Illuminate\Validation\Rule;
 
 class ExportMunicipio implements FromCollection
 {
@@ -50,7 +53,11 @@ class MunicipioController extends Controller
     
     public function search(Request $request)
     {
-        $mun = municipio::where('municipio','like','%' . $request->search . '%')->paginate(10);
+        $mun = municipio::whereHas('pais', function($query) use ($request) {
+            $query->where('pais','like','%'.  $request->search .'%');
+        })->orWhereHas('depto', function($query) use ($request){
+            $query->where('departamento','like','%' . $request->search .'%');
+        })->orWhere('municipio','like','%' . $request->search . '%')->paginate(10);
 
         $mun->appends($request->all());
 
@@ -95,7 +102,18 @@ class MunicipioController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, $this->rules,$this->messages);
+
+        $rules = [
+            'mun' => [Rule::unique('municipio', 'municipio')->where(function ($query) use ($request) {
+                return $query->where('idPais', $request->pais)->where('idDepartamento',$request->depto);
+            }),]
+        ];
+
+        $messages = [
+            'mun.unique' => 'Ya existe la informacion ingresada',
+        ];
+
+        $this->validate($request, $rules,$messages);
 
         $mun = new Municipio();
         $mun->idpais = $request->pais;
