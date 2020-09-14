@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class Cliente extends Model
 {
@@ -35,6 +35,6 @@ class Cliente extends Model
       public function direccion(){
         return $this->belongsToMany(direccion::class,'clientedireccion','idCliente','idDireccion');
     }
-    
+
 
 }
