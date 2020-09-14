@@ -14,13 +14,13 @@ use App\clientedireccion as cd;
 
 class ExportClients implements FromCollection
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function collection()
-    {
-        return c::get();
-    }
+  /**
+   * @return \Illuminate\Support\Collection
+   */
+  public function collection()
+  {
+    return c::get();
+  }
 }
 
 class ClienteController extends Controller
