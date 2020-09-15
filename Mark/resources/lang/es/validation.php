@@ -117,9 +117,9 @@ return [
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
     'LettersWhiteSpaces' => 'Los valores deben ser unicamente letras',
-    'DPIMessage' => 'El DPI debe ser un numero de 14 digitos',
-    'NombreMessage' => 'Debe colocar unicamente un Nombre',
-    'ApellidoMessage' => 'Debe colocar unicamente un Apellido',
+    'DPIMessage' => 'El DPI debe ser un numero de 13 digitos',
+    'NombreMessage' => 'El Nombre debe contener unicamente letras',
+    'ApellidoMessage' => 'El Apellido debe contener unicamente letras',
     'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos',
     /*
     |--------------------------------------------------------------------------
