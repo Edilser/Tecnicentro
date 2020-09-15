@@ -128,29 +128,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-label-group">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-md-6 col-12">
-
-                                                        <input id="telefono" placeholder="Telefono" type="text"
-                                                            class="form-control @error('telefono') is-invalid @enderror"
-                                                            name="telefono" value="{{ old('telefono') }}">
-
-                                                    </div>
-
-                                                    <div class="col-md-6 col-12">
-                                                        <a onclick="Insert()" class="btn btn-outline-success"><i
-                                                                class="feather icon-plus"></i> Agregar</a>
-                                                        </td>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
+                                    
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <div class="table-responsive">
@@ -166,8 +144,7 @@
                                                         @foreach ($v->telefono as $t)
                                                             <tr id="{{ $t->telefono }}">
                                                                 <td>{{ $t->telefono }}</td>
-                                                                <td><a onclick=Remove({{ $t->telefono }})><i
-                                                                            class="feather icon-trash"></i></a></span></td>
+                                                                <td><a ><i ></i></a></span></td>
                                                                 <td>
                                                                     <input name="tels[]" value="{{ $t->telefono }}"
                                                                         type="text" hidden>

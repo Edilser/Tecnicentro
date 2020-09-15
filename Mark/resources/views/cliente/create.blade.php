@@ -47,7 +47,7 @@
                                         <div class="form-group validate">
                                             <!-- input debe contener required-->
                                             <label for="last-name-column">Segundo Nombre</label>
-                                            <input type="text" id="SegundoNombre" class="form-control" name="SegundoNombre" placeholder="Segundo Nombre"  data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                            <input type="text" id="SegundoNombre" class="form-control" name="SegundoNombre" placeholder="Segundo Nombre" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+([a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
                                             <p class="help-block"></p>
                                         </div>
                                     </div>
@@ -97,10 +97,10 @@
                                             <div class="container">
                                                 <div class="row">
                                                     <div class="col-md-6 col-12">
-                                                    <!-- input debe contener required-->
-                                                    <label for="last-name-column">Telefono</label>
-                                                    <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" data-validation-regex-regex="^[0-9]{8,8}$" data-validation-regex-message=' {{ __('validation.TelefonoMessage') }} '>
-                                                    <p class="help-block"></p>
+                                                        <!-- input debe contener required-->
+                                                        <label for="last-name-column">Telefono</label>
+                                                        <input type="text" id="telefono" class="form-control" name="telefono" placeholder="Telefono" data-validation-regex-regex="^[0-9]{8,8}$" data-validation-regex-message=' {{ __('validation.TelefonoMessage') }} '>
+                                                        <p class="help-block"></p>
                                                     </div>
                                                     <div class="col-md-6 col-12">
                                                         <a onclick="Insert()" class="btn btn-outline-success"><i class="feather icon-plus"></i> Agregar</a>
@@ -130,6 +130,45 @@
                                         </div>
                                     </div>
 
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-label-group">
+                                            <div class="col-md-5">
+                                                <span>Calle o Avenida</span>
+                                            </div>
+
+                                            <input id="calleave" placeholder="Calle o Avenida" type="text" class="form-control @error('calleave') is-invalid @enderror" name="calleave" value="{{ old('calleave') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-label-group">
+                                            <div class="col-md-5">
+                                                <span># Casa</span>
+                                            </div>
+
+                                            <input id="guion" placeholder="# Casa" type="text" class="form-control @error('guion') is-invalid @enderror" name="guion" value="{{ old('guion') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-label-group">
+                                            <div class="col-md-5">
+                                                <span>Zona</span>
+                                            </div>
+
+                                            <input id="zona" placeholder="Zona" type="text" class="form-control @error('zona') is-invalid @enderror" name="zona" value="{{ old('zona') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-12">
+                                        <div class="form-label-group">
+                                            <div class="col-md-5">
+                                                <span>Colonia</span>
+                                            </div>
+
+                                            <input id="colonia" placeholder="Colonia" type="text" class="form-control @error('colonia') is-invalid @enderror" name="colonia" value="{{ old('colonia') }}">
+                                        </div>
+                                    </div>
 
                                     <div class="col-md-4 col-12">
                                         <div class="form-group validate">

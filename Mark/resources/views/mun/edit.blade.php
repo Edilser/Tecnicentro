@@ -96,6 +96,8 @@
                                                 
                                             </div>
                                     </div>
+
+                                    
                                     <div class="col-md-8 offset-md-4">
                                         <a href="{{ URL::previous() }}"
                                             class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Regresar</a>
