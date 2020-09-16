@@ -118,7 +118,7 @@
                                                     @foreach ($v->telefono as $t)
                                                     <tr id="{{ $t->telefono }}">
                                                         <td>{{ $t->telefono }}</td>
-                                                        <td><a onclick=Remove( {{ $t->telefono }} )><i class="feather icon-trash"></i></a></span></td>
+                                                        <td><a onclick="Remove('{{ $t->telefono }}');"><i class="feather icon-trash"></i></a></span></td>
                                                         <td>
                                                             <input name="tels[]" value="{{$t->telefono}}" type="text" hidden>
                                                         </td>
