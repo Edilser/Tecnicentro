@@ -1,7 +1,7 @@
 {
   "menu": [
     {
-      "url": "",
+      "url": "/dashboardAnalytics",
       "name": "Dashboard",
       "slug": "dashboard",
       "icon": "feather icon-home"
@@ -17,15 +17,45 @@
       "icon": "feather icon-mailfeather icon-settings",
       "submenu": [
         {
+          "url" : "/empresa",
+          "name" : "Business",
+          "icon": "feather icon-circle",
+          "i18n" : "nav.empresas"
+        },
+        {
               "url": "/cliente",
               "name": "Client",
               "icon": "feather icon-circle",
               "i18n": "cliente"
         },
         {
+          "url" : "/vehiculo",
+          "name" : "Vehicle",
+          "icon": "feather icon-circle",
+          "i18n" : "nav.empresas"
+        },
+        {
+          "url" : "/marca",
+          "name" : "Brand",
+          "icon": "feather icon-circle",
+          "i18n" : "nav.empresas"
+        },
+        {
+          "url" : "/modelo",
+          "name" : "Model",
+          "icon": "feather icon-circle",
+          "i18n" : "nav.empresas"
+        },
+        {
+          "url" : "/tipoVehiculo",
+          "name" : "Vehicle type",
+          "icon": "feather icon-circle",
+          "i18n" : "nav.empresas"
+        },
+        {
           "url":"",
           "name":"Address",
-          "icon":"feather icon-mailfeather icon-settings",
+          "icon":"feather icon-mailfeather icon-map-pin",
           "submenu": [
             {
               "url": "/pais",
