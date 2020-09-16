@@ -19,11 +19,11 @@ $configData = Helper::applClasses();
 
     <title>@yield('title')</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/logo/favicon.ico">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {{-- Include core + vendor Styles --}}
     @include('panels/styles')
 
-    
+
 
 </head>
 

@@ -183,6 +183,45 @@ Route::post('cliente/search', 'ClienteController@search')->name('cliente.search'
 Route::get('cliente/delete/{id}', 'ClienteController@delete')->name('cliente.delete');
 Route::resource('cliente', 'ClienteController');
 
+//EMPRESA
+Route::get('/pdfempresas', 'ControllerPdf@PDFempresas')->name('descargarempresa');
+//Route::get('/excelempresas', 'ControllerPdf@exportExcel')->name('descargarempresa');
+Route::post('empresa/search', 'EmpresaController@search')->name('empresa.search');
+Route::get('empresa/delete/{id}', 'EmpresaController@delete')->name('empresa.delete');
+Route::resource('empresa', 'EmpresaController');
+
+//VEHICULO
+Route::get('/filtro/{id}', 'VehiculoController@filtro')->name('create.filtro');
+Route::get('/total_select', 'VehiculoController@total_select');
+Route::get('/pdfvehiculos', 'ControllerPdf@PDFvehiculos')->name('descargarvehiculo');
+Route::get('vehiculo/search', 'VehiculoController@search')->name('vehiculo.search');
+Route::get('vehiculo/delete/{id}', 'VehiculoController@delete')->name('vehiculo.delete');
+Route::resource('vehiculo', 'VehiculoController');
+
+//MARCA
+Route::get('/pdfmarca', 'ControllerPdf@PDFmarcas')->name('descargarmarca');
+Route::post('marca/search', 'MarcaController@search')->name('marca.search');
+Route::get('marca/delete/{id}', 'MarcaController@delete')->name('marca.delete');
+Route::resource('marca', 'MarcaController');
+
+//MODELO
+Route::get('/filtromod', 'ModeloController@filtro');
+Route::get('/pdfmodelo', 'ControllerPdf@PDFmodelos')->name('descargarmodelo');
+Route::post('modelo/search', 'ModeloController@search')->name('modelo.search');
+Route::get('modelo/delete/{id}', 'ModeloController@delete')->name('modelo.delete');
+Route::resource('modelo', 'ModeloController');
+
+//TIPO
+Route::get('/pdftipo', 'ControllerPdf@PDFtipos')->name('descargartipo');
+Route::post('tipoVehiculo/search', 'TipoVehiculoController@search')->name('tipoVehiculo.search');
+Route::get('tipoVehiculo/delete/{id}', 'TipoVehiculoController@delete')->name('tipoVehiculo.delete');
+Route::resource('tipoVehiculo', 'TipoVehiculoController');
+
+
+
+
+
+
 //PAIS
 Route::get('pais/search','PaisController@Search')->name('pais.search');
 Route::get('pais/descargar','PaisController@Download')->name('pais.download');
