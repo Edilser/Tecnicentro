@@ -177,7 +177,7 @@ class ClienteController extends Controller
    */
   public function update(Request $request, $id)
   {
-    $this->validate($request, [
+    /**$this->validate($request, [
       'dpi' => 'required|regex:/^([0-9]){13}$/',
       'PrimerNombre' => 'required|alpha',
       'SegundoNombre' => 'required|alpha',
@@ -186,7 +186,7 @@ class ClienteController extends Controller
       'SegundoApellido' => 'required|regex:/^[\pL\s\-]+$/u',
       'ApellidoCasado' => 'regex:/^[\pL\s\-]+$/u|nullable',
       'fecha' => 'required|nullable|date',
-    ]);
+    ]);*/
 
     $v = c::find($id);
     $v->dpi = $request->dpi;
