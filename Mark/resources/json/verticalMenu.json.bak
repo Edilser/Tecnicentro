@@ -18,7 +18,7 @@
       "submenu": [
         {
               "url": "/cliente",
-              "name": "Client",
+              "name": "client",
               "icon": "feather icon-circle",
               "i18n": "cliente"
         },
@@ -48,39 +48,7 @@
           ]
         }
       ]
-    },
-    {
-      "url": "",
-      "name": "Quotes",
-      "icon": "feather icon-clipboard",
-      "submenu": [
-        {
-          "url": "/cotizacion-particular",
-          "name": "Particular",
-          "icon": "feather icon-circle",
-          "i18n": "cotizacionParticular"
-        },
-        {
-          "url" : "",
-          "name" : "IGSS",
-          "icon" : "feather icon-clipboard",
-          "submenu" : [
-            {
-              "url": "/cotizacion-vehiculo",
-              "name": "Vehicles",
-              "icon": "feather icon-circle",
-              "i18n": "cotizacionVehiculo"
-            },
-            {
-              "url": "/cotizacion-moto",
-              "name": "Motorcycles",
-              "icon": "feather icon-circle",
-              "i18n": "cotizacionMoto"
-            }
-          ]
-        }
-      ]
     }
-
+    
   ]
 }
