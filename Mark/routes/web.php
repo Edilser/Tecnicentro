@@ -129,7 +129,7 @@ Route::get('/', function () {
 // Route::get('/pricing', 'PagesController@pricing');
 
 // // Route Authentication Pages
-// Route::get('/auth-login', 'AuthenticationController@login');
+Route::get('/auth-login', 'AuthenticationController@login');
 // Route::get('/auth-register', 'AuthenticationController@register');
 // Route::get('/auth-forgot-password', 'AuthenticationController@forgot_password');
 // Route::get('/auth-reset-password', 'AuthenticationController@reset_password');

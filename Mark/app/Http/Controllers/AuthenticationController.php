@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class AuthenticationController extends Controller
 {
     // Login
@@ -13,7 +13,12 @@ class AuthenticationController extends Controller
             'blankPage' => true
         ];
 
-        return view('/pages/auth-login', [
+        Auth::logout();
+
+        // return view('/pages/auth-login', [
+        //     'pageConfigs' => $pageConfigs
+        // ]);
+        return view('/auth/login', [
             'pageConfigs' => $pageConfigs
         ]);
     }
