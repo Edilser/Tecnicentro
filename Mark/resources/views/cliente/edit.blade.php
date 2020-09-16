@@ -8,7 +8,7 @@
 @endsection
 @section('page-style')
 <!-- Page css files -->
-
+<link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
 @endsection
 
 @section('content')
@@ -28,109 +28,70 @@
                             <div class="row">
                                 @csrf
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input placeholder="DPI" id="dpi" type="text" class="form-control @error('dpi') is-invalid @enderror" name="dpi" value="{{ $v['dpi'] }}">
+                                    <div class="form-group validate">
                                         <label for="first-name-column">DPI</label>
-                                        @error('dpi')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-
-                                        @enderror
+                                        <input placeholder="DPI" id="dpi" type="text" class="form-control @error('dpi') is-invalid @enderror" name="dpi" value="{{ $v['dpi'] }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{13,13}$" data-validation-regex-message=' {{ __('validation.DPIMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ $v['primerNombre'] }}">
-                                        <label for="last-name-column">Primer Nombre</label>
-
-                                        @error('PrimerNombre')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                    <div class="form-group validate">
+                                    <label for="last-name-column">Primer Nombre</label>
+                                        <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ $v['primerNombre'] }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ $v['segundoNombre'] }}">
+                                    <div class="form-group validate">
                                         <label for="city-column">Segundo Nombre</label>
-
-                                        @error('SegundoNombre')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ $v['segundoNombre'] }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ $v['tercerNombre'] }}">
-
+                                    <div class="form-group validate">
                                         <label for="country-floating">Tercer Nombre</label>
-                                        @error('TercerNombre')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ $v['tercerNombre'] }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ $v['primerApellido'] }}">
-
+                                    <div class="form-group validate">
                                         <label for="company-column">Primer Apellido</label>
-                                        @error('PrimerApellido')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ $v['primerApellido'] }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ $v['segundoApellido'] }}">
-
+                                    <div class="form-group validate">
                                         <label for="email-id-column">Segundo Apellido</label>
-                                        @error('SegundoApellido')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ $v['segundoApellido'] }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ $v['apellidoCasado'] }}">
-
+                                    <div class="form-group validate">
                                         <label for="email-id-column">Apellido de Casado</label>
-                                        @error('ApellidoCasado')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ $v['apellidoCasado'] }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
-                                        <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ $v['fechaNacimiento'] }}">
+                                    <div class="form-group validate">
                                         <label for="email-id-column">Fecha Nacimiento</label>
-                                        @error('fecha')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
+                                        <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ $v['fechaNacimiento'] }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                        <p class="help-block"></p>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
+                                    <div class="form-group validate">
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
 
-                                                    <input id="telefono" placeholder="Telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}">
-
+                                                    <input id="telefono" placeholder="Telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" value="{{ old('telefono') }}" data-validation-regex-regex="^[0-9]{8,8}$" data-validation-regex-message=' {{ __('validation.TelefonoMessage') }} '>
+                                                    <p class="help-block"></p>
                                                 </div>
 
                                                 <div class="col-md-6 col-12">
@@ -144,7 +105,7 @@
                                 </div>
 
                                 <div class="col-md-6 col-12">
-                                    <div class="form-label-group">
+                                    <div class="form-group validate">
                                         <div class="table-responsive">
                                             <table name="tel" id="tel" class="table table-hover-animation table-striped">
                                                 <thead>
@@ -172,50 +133,58 @@
 
                                 <!-- inicia direccion -->
                                 <div class="col-md-6 col-12">
-                                            <div class="form-label-group">
+                                            <div class="form-group validate">
                                                 <div class="col-md-5">
                                                     <span>Calle o Avenida</span>
                                                 </div>
                                                
                                                 <input id="calleave" placeholder="Calle o Avenida" type="text"
                                                 class="form-control @error('calleave') is-invalid @enderror"
-                                                name="calleave" value="{{ $v->direccion[0]->calleave }}">
+                                                name="calleave" value="{{ $v->direccion[0]->calleave }}" required 
+                                                data-validation-required-message='{{ __('validation.required') }}'>
+                                                <p class="help-block"></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 col-12">
-                                            <div class="form-label-group">
+                                            <div class="form-group validate">
                                                 <div class="col-md-5">
                                                     <span># Casa</span>
                                                 </div>
 
                                                 <input id="guion" placeholder="# Casa" type="text"
                                                 class="form-control @error('guion') is-invalid @enderror"
-                                                name="guion" value="{{ $v->direccion[0]->numero }}">
+                                                name="guion" value="{{ $v->direccion[0]->numero }}" required 
+                                                data-validation-required-message='{{ __('validation.required') }}'>
+                                                <p class="help-block"></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 col-12">
-                                            <div class="form-label-group">
+                                            <div class="form-group validate">
                                                 <div class="col-md-5">
                                                     <span>Zona</span>
                                                 </div>
 
                                                 <input id="zona" placeholder="Zona" type="text"
                                                 class="form-control @error('zona') is-invalid @enderror"
-                                                name="zona" value="{{ $v->direccion[0]->zona }}">
+                                                name="zona" value="{{ $v->direccion[0]->zona }}" required 
+                                                data-validation-required-message='{{ __('validation.required') }}'>
+                                                <p class="help-block"></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6 col-12">
-                                            <div class="form-label-group">
+                                            <div class="form-group validate">
                                                 <div class="col-md-5">
                                                     <span>Colonia</span>
                                                 </div>
 
                                                 <input id="colonia" placeholder="Colonia" type="text"
                                                 class="form-control @error('colonia') is-invalid @enderror"
-                                                name="colonia" value="{{ $v->direccion[0]->colonia }}">
+                                                name="colonia" value="{{ $v->direccion[0]->colonia }}" required 
+                                                data-validation-required-message='{{ __('validation.required') }}'>
+                                                <p class="help-block"></p>
                                             </div>
                                         </div>
 
@@ -299,9 +268,12 @@
 
 @section('vendor-script')
 <!-- vendor files -->
+<script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
 @endsection
 @section('page-script')
 <!-- Page js files -->
+<script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
+
 <script>
     $(document).ready(function(e) {
 
