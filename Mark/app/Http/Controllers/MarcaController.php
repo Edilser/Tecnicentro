@@ -5,8 +5,28 @@ namespace App\Http\Controllers;
 use App\Marca as marca;
 use Illuminate\Http\Request;
 
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
+
+class ExportMarca implements FromCollection
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return marca::get();
+    }
+}
+
 class MarcaController extends Controller
 {
+
+      public function download()
+      {
+          return Excel::download(new ExportMarca(), 'Marcas.xlsx');
+      }
+
     /**
      * Display a listing of the resource.
      *
