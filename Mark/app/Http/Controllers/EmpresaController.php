@@ -87,10 +87,10 @@ class EmpresaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+      /**$this->validate($request, [
         'empresa' => 'required|regex: /^[A-Za-z0-9\s]+$/',
         'idDireccion' => 'required'
-      ]);
+      ]);*/
 
         $v = empresa::find($id);
         $v->empresa = $request->empresa;
