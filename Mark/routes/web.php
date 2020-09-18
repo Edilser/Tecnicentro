@@ -199,7 +199,7 @@ Route::get('vehiculo/delete/{id}', 'VehiculoController@delete')->name('vehiculo.
 Route::resource('vehiculo', 'VehiculoController');
 
 //MARCA
-Route::get('/pdfmarca', 'ControllerPdf@PDFmarcas')->name('descargarmarca');
+Route::get('/marca/download', 'MarcaController@download')->name('marca.download');
 Route::post('marca/search', 'MarcaController@search')->name('marca.search');
 Route::get('marca/delete/{id}', 'MarcaController@delete')->name('marca.delete');
 Route::resource('marca', 'MarcaController');
