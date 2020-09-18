@@ -62,10 +62,8 @@
                       </div>
                       <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
-                            <a href="{{url('vehiculo')}}" class="btn btn-danger"><i class="far fa-arrow-alt-circle-left"></i>     Regresar</a>
-                            <button type="submit" class="btn btn-primary"><i class="far fa-check-circle"></i>
-                                {{ __('Registrar') }}
-                            </button>
+                            <a href="{{url('vehiculo')}}" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Regresar</a>
+                            <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Guardar</button>
 
                         </div>
                     </div>
