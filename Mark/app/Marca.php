@@ -13,7 +13,7 @@ class Marca extends Model
     'marca'];
 
   protected $hidden = [
-    'id',
+    'idEmpresa','id',
   ];
 
   public function modelos() {

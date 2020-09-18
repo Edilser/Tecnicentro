@@ -4,9 +4,33 @@ namespace App\Http\Controllers;
 
 use App\TipoVehiculo as tipo;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+class ExportTipo implements FromCollection, WithHeadings
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return tipo::all();
+    }
+     public function headings():array
+    {
+        return ["Tipo"];
+    }
+}
 
 class TipoVehiculoController extends Controller
 {
+
+  public function download()
+  {
+      return Excel::download(new ExportTipo(), 'Tipos.xlsx');
+  }
+
     /**
      * Display a listing of the resource.
      *

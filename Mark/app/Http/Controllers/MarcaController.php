@@ -7,16 +7,23 @@ use Illuminate\Http\Request;
 
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ExportMarca implements FromCollection
+class ExportMarca implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        return marca::get();
+        return marca::all();
     }
+
+    public function headings():array
+    {
+        return ["Marca"];
+    }
+
 }
 
 class MarcaController extends Controller

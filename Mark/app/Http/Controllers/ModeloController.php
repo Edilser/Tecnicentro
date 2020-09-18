@@ -18,7 +18,7 @@ class ExportModelo implements FromCollection, WithHeadings
     */
     public function collection()
     {
-        return modelo::get();
+        return modelo::all();
     }
      public function headings():array
     {

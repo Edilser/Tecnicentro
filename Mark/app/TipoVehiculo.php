@@ -12,7 +12,7 @@ class TipoVehiculo extends Model
   protected $fillable = [
     'tipo'];
 
-  protected $hidden = [
+  protected $hidden = ['idEmpresa',
     'id',
   ];
 

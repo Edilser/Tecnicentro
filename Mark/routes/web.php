@@ -212,7 +212,7 @@ Route::get('modelo/delete/{id}', 'ModeloController@delete')->name('modelo.delete
 Route::resource('modelo', 'ModeloController');
 
 //TIPO
-Route::get('/pdftipo', 'ControllerPdf@PDFtipos')->name('descargartipo');
+Route::get('/tipo/download', 'TipoVehiculoController@download')->name('tipo.download');
 Route::post('tipoVehiculo/search', 'TipoVehiculoController@search')->name('tipoVehiculo.search');
 Route::get('tipoVehiculo/delete/{id}', 'TipoVehiculoController@delete')->name('tipoVehiculo.delete');
 Route::resource('tipoVehiculo', 'TipoVehiculoController');
