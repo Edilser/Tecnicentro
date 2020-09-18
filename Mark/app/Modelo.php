@@ -9,7 +9,7 @@ class Modelo extends Model
   public $timestamps = false;
   protected $table = 'modelo';
 
-  protected $fillable = [
+  protected $fillable = ['idMarca',
     'modelo'];
 
   protected $hidden = [

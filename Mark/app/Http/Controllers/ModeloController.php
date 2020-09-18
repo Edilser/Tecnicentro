@@ -7,8 +7,34 @@ use App\Marca as marca;
 use Illuminate\Http\Request;
 use CloudCreativity\LaravelJsonApi\Document\Error;
 
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+class ExportModelo implements FromCollection, WithHeadings
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return modelo::get();
+    }
+     public function headings():array
+    {
+        return ["Modelo", "Marca"];
+    }
+}
+
+
 class ModeloController extends Controller
 {
+
+  public function download()
+  {
+      return Excel::download(new ExportModelo(), 'Modelos.xlsx');
+  }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +45,7 @@ class ModeloController extends Controller
       $breadcrumbs = [
         ['link'=>"/home",'name'=>"Home"],['name'=>"modelos"]];
 
-        $modelo=modelo::paginate(20);
+        $modelo=modelo::with('marca')->paginate(20);
         return view('/modelo/index', compact('modelo'), ['breadcrumbs' => $breadcrumbs]);
     }
 

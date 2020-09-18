@@ -206,7 +206,7 @@ Route::resource('marca', 'MarcaController');
 
 //MODELO
 Route::get('/filtromod', 'ModeloController@filtro');
-Route::get('/pdfmodelo', 'ControllerPdf@PDFmodelos')->name('descargarmodelo');
+Route::get('/modelo/download', 'ModeloController@download')->name('modelo.download');
 Route::post('modelo/search', 'ModeloController@search')->name('modelo.search');
 Route::get('modelo/delete/{id}', 'ModeloController@delete')->name('modelo.delete');
 Route::resource('modelo', 'ModeloController');

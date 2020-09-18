@@ -32,7 +32,7 @@
                                     <div>
                                       <a href="{{ route('modelo.index') }}" class="btn btn-outline-primary"><i class="feather icon-align-justify"></i>   Mostrar Todos</a>
                                       <a href="{{ route('modelo.create') }}" class="btn btn-outline-success"><i class="feather icon-plus"></i>   Agregar</a>
-                                      <a href="{{ route('descargarmodelo') }}"  class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar</a>
+                                      <a href="{{ route('modelo.download') }}"  class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar</a>
                                     </div>
                                   </div>
                                 {!! Form::close() !!}
@@ -46,6 +46,7 @@
                               <table class="table table-hover-animation table-striped">
                                   <thead>
                                       <tr class="">
+                                          <th scope="col">Marca</th>
                                           <th scope="col">Modelo</th>
                                           <th colspan="2">Acciones</th>
                                       </tr>
@@ -53,6 +54,7 @@
                                   <tbody>
                                     @foreach($modelo as $modelo)
                                       <tr>
+                                        <td>{{ $modelo->marca->marca}} </td>
                                         <td>{{ $modelo->modelo}} </td>
                                         <td class="">
                                           <a href="{{ route('modelo.edit', $modelo->id)}}"><i class="feather icon-edit"></i></a></span>
