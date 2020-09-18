@@ -14,7 +14,11 @@ use App\clientedireccion as cd;
 use App\departamento;
 use App\Municipio;
 
-class ExportClients implements FromCollection
+use Maatwebsite\Excel\Concerns\WithColumnFormatting;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+
+class ExportClients implements FromCollection, WithColumnFormatting, ShouldAutoSize
 {
   /**
    * @return \Illuminate\Support\Collection
@@ -23,6 +27,13 @@ class ExportClients implements FromCollection
   {
     return c::get();
   }
+
+   public function columnFormats(): array
+    {
+        return [
+            'B' => NumberFormat::FORMAT_NUMBER
+        ];
+    }
 }
 
 class ClienteController extends Controller
