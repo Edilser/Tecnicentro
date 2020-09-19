@@ -13,7 +13,7 @@ class Vehiculo extends Model
     'placa','chasis','motor','color','year'];
 
   protected $hidden = [
-    'id',
+    'id', 'idEmpresa'
   ];
 
   public function tipovehiculo () {

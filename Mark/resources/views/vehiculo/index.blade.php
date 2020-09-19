@@ -33,7 +33,7 @@
                                     <div>
                                       <a href="{{ route('vehiculo.index') }}" class="btn btn-outline-primary"><i class="feather icon-align-justify"></i>   Mostrar Todos</a>
                                       <a href="{{ route('vehiculo.create') }}" class="btn btn-outline-success"><i class="feather icon-plus"></i>   Agregar</a>
-                                      <a href="{{ route('descargarvehiculo') }}"  class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar</a>
+                                      <a href="{{ route('vehiculo.download') }}"  class="btn btn-outline-info"><i class="feather icon-file-text"></i>    Exportar</a>
                                     </div>
                                   </div>
 

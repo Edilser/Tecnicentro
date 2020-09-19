@@ -193,7 +193,7 @@ Route::resource('empresa', 'EmpresaController');
 //VEHICULO
 Route::get('/filtro/{id}', 'VehiculoController@filtro')->name('create.filtro');
 Route::get('/total_select', 'VehiculoController@total_select');
-Route::get('/pdfvehiculos', 'ControllerPdf@PDFvehiculos')->name('descargarvehiculo');
+Route::get('/vehiculo/download', 'VehiculoController@download')->name('vehiculo.download');
 Route::get('vehiculo/search', 'VehiculoController@search')->name('vehiculo.search');
 Route::get('vehiculo/delete/{id}', 'VehiculoController@delete')->name('vehiculo.delete');
 Route::resource('vehiculo', 'VehiculoController');
