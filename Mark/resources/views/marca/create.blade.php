@@ -1,5 +1,14 @@
 @extends('layouts/contentLayoutMaster')
 
+@section('vendor-style')
+<!-- vendor css files -->
+<link rel="stylesheet" href="{{ asset(mix('css/pages/data-list-view.css')) }}">
+@endsection
+@section('page-style')
+<!-- Page css files -->
+<link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
+@endsection
+
 @section('title', 'Crear Marcas')
 
 @section('content')
@@ -7,23 +16,20 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 15px;">{{ __('Registro de Marca') }}</div>
+                <div class="card-header">
+                    <h4 class="card-title">Registro de Marca</h4>
+                </div>
 
                 <div class="card-body">
-                    {{ Form::open(['method' => 'post', 'route' => 'marca.store', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['method' => 'post', 'novalidate', 'route' => 'marca.store', 'class' => 'form-horizontal']) }}
                         @csrf
 
                         <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right">{{ __('Nombre Marca') }}</label>
 
                             <div class="col-md-6">
-                                <input id="marca" type="text" class="form-control @error('marca') is-invalid @enderror" name="marca" value="{{ old('marca') }}">
-
-                                @error('marca')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                                <input id="marca" type="text" class="form-control" name="marca" value="{{ old('marca') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                <p class="help-block"></p>
                             </div>
                         </div>
 
@@ -41,4 +47,12 @@
         </div>
     </div>
 </div>
+@endsection
+@section('vendor-script')
+<!-- vendor files -->
+<script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
+@endsection
+@section('page-script')
+<!-- Page js files -->
+<script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
 @endsection

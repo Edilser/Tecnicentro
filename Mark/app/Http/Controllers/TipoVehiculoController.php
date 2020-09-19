@@ -109,9 +109,9 @@ class TipoVehiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+      /*$this->validate($request, [
         'tipo' => 'required|regex: /^[A-Za-z0-9\s]+$/'
-      ]);
+      ]);*/
       $v = tipo::find($id);
       $v->tipo = $request->tipo;
       $v->save();

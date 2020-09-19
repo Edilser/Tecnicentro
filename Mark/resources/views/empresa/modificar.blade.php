@@ -15,7 +15,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 15px;">{{ __('Actualizar Empresa') }}</div>
+                <div class="card-header">
+                <h4 class="card-title">Modificar Empresa</h4>
+                </div>
                 <div class="card-body">
                 {{ Form::model($v,['method' => 'PATCH','action' => ["EmpresaController@update",$id], 'novalidate', 'class' => 'form-horizontal']) }}
                     @csrf

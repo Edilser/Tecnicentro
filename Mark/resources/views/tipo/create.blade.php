@@ -2,23 +2,34 @@
 
 @section('title', 'Crear Tipo Vehículo')
 
+@section('vendor-style')
+<!-- vendor css files -->
+<link rel="stylesheet" href="{{ asset(mix('css/pages/data-list-view.css')) }}">
+@endsection
+@section('page-style')
+<!-- Page css files -->
+<link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 15px;">{{ __('Registro Tipo de Vehículo') }}</div>
+                <div class="card-header">
+                    <h4 class="card-title">Registro Tipo de Vehículo</h4>
+                </div>
 
                 <div class="card-body">
-                    {{ Form::open(['method' => 'post', 'route' => 'tipoVehiculo.store', 'class' => 'form-horizontal']) }}
+                    {{ Form::open(['method' => 'post', 'novalidate', 'route' => 'tipoVehiculo.store', 'class' => 'form-horizontal']) }}
                         @csrf
 
                         <div class="form-group row">
                             <label class="col-md-4 col-form-label text-md-right">{{ __('Tipo vehículo') }}</label>
 
                             <div class="col-md-6">
-                                <input id="tipo" type="text" class="form-control @error('tipo') is-invalid @enderror" name="tipo" value="{{ old('tipo') }}">
-
+                                <input id="tipo" type="text" class="form-control" name="tipo" value="{{ old('tipo') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                <p class="help-block"></p>
                                 @error('tipo')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -41,4 +52,12 @@
         </div>
     </div>
 </div>
+@endsection
+@section('vendor-script')
+<!-- vendor files -->
+<script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
+@endsection
+@section('page-script')
+<!-- Page js files -->
+<script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
 @endsection

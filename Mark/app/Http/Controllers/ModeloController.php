@@ -123,9 +123,9 @@ class ModeloController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+      /*$this->validate($request, [
         'modelo' => 'required|regex: /^[A-Za-z0-9\s]+$/'
-      ]);
+      ]);*/
       //dd($request);
       $v = modelo::find($id);
       $v->idMarca = $request->marca;

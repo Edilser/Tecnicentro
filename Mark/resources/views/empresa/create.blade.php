@@ -16,7 +16,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 15px;">{{ __('Registro de Empresa') }}</div>
+                <div class="card-header">
+                    <h4 class="card-title">Registro de Empresa</h4>
+                </div>
 
                 <div class="card-body">
                     {{ Form::open(['method' => 'post', 'novalidate', 'route' => 'empresa.store', 'class' => 'form-horizontal']) }}

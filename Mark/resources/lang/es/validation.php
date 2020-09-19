@@ -90,7 +90,7 @@ return [
         'string' => 'The :attribute must be at least :min characters.',
         'array' => 'The :attribute must have at least :min items.',
     ],
-    'not_in' => 'The selected :attribute is invalid.',
+    'not_in' => 'Seleccione una opcion valida para el campo :attribute',
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'present' => 'The :attribute field must be present.',
@@ -121,6 +121,10 @@ return [
     'NombreMessage' => 'El Nombre debe contener unicamente letras',
     'ApellidoMessage' => 'El Apellido debe contener unicamente letras',
     'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos',
+    'YearMessage' => 'Ingrese un año entre 1960 y 2022',
+    'MarcaMessage' => 'Campo requerido',
+    'ModeloMessage' => 'Ingrese un año entre 1960 y 2022',
+    'TipoMessage' => 'Ingrese un año entre 1960 y 2022',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

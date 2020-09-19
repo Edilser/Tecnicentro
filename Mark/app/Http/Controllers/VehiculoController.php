@@ -152,9 +152,9 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+      /**$this->validate($request, [
         'year' => 'required|regex: /^(0-9)$/'
-      ]);
+      ]);*/
       $v = vehiculo::find($id);
       $v->idEmpresa = 1;
       $v->idMarca = $request['marca'];

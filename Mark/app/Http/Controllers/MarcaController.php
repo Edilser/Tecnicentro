@@ -113,9 +113,9 @@ class MarcaController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $this->validate($request, [
+      /*$this->validate($request, [
         'marca' => 'required|regex: /^[A-Za-z0-9\s]+$/'
-      ]);
+      ]);*/
       $v = marca::find($id);
       $v->marca = $request->marca;
       $v->save();

@@ -1,6 +1,15 @@
 
 @extends('layouts/contentLayoutMaster')
 
+@section('vendor-style')
+<!-- vendor css files -->
+<link rel="stylesheet" href="{{ asset(mix('css/pages/data-list-view.css')) }}">
+@endsection
+@section('page-style')
+<!-- Page css files -->
+<link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
+@endsection
+
 @section('title', 'Vehículos')
 
 @section('content')
@@ -8,10 +17,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header bg-primary text-white" style="padding: 15px;">{{ __('Registro de Vehículo') }}</div>
-
+                <div class="card-header">
+                  <h4 class="card-title">Registro de Vehículo</h4>
+                </div>
                 <div class="card-body">
-                  {{ Form::open(['method' => 'post', 'route' => 'vehiculo.store', 'class' => 'form-horizontal']) }}
+                  {{ Form::open(['method' => 'post', 'novalidate', 'route' => 'vehiculo.store', 'class' => 'form-horizontal']) }}
                     @csrf
                       <div class="form-group">
                         <label for="exampleFormControlInput1">Marca</label>
@@ -53,12 +63,8 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Año</label>
-                        <input id="year" type="number" class="form-control @error('year') is-invalid @enderror" name="year" value="{{ old('year') }}">
-                          @error('year')
-                            <span class="invalid-feedback" role="alert">
-                              <strong>{{ $message }}</strong>
-                            </span>
-                          @enderror
+                        <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^(19[6-8][0-9]|199[0-9]|20[01][0-9]|202[0-2])$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
+                        <p class="help-block"></p>
                       </div>
                       <div class="form-group row mb-0">
                         <div class="col-md-8 offset-md-4">
@@ -103,4 +109,12 @@
     })
   });
 </script>
+@endsection
+@section('vendor-script')
+<!-- vendor files -->
+<script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
+@endsection
+@section('page-script')
+<!-- Page js files -->
+<script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
 @endsection
