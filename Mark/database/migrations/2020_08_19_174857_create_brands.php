@@ -16,7 +16,7 @@ class CreateBrands extends Migration
         Schema::create('marca', function (Blueprint $table) {
           $table->id();
           $table->foreignId('idEmpresa');
-          $table->integer('marca');
+          $table->string('marca');
 
           $table->foreign('idEmpresa')->references('id')->on('empresa');
         });
