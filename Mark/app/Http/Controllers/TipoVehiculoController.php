@@ -65,9 +65,9 @@ class TipoVehiculoController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, [
+      /*$this->validate($request, [
         'tipo' => 'required|regex: /^[A-Za-z0-9\s]+$/'
-      ]);
+      ]);*/
       $cl = new tipo();
       $cl->idEmpresa = 1;
       $cl->tipo = $request['tipo'];

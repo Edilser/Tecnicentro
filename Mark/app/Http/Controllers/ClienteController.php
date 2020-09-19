@@ -17,8 +17,9 @@ use App\Municipio;
 use Maatwebsite\Excel\Concerns\WithColumnFormatting;
 use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ExportClients implements FromCollection, WithColumnFormatting, ShouldAutoSize
+class ExportClients implements FromCollection, WithColumnFormatting, ShouldAutoSize, WithHeadings
 {
   /**
    * @return \Illuminate\Support\Collection
@@ -31,8 +32,12 @@ class ExportClients implements FromCollection, WithColumnFormatting, ShouldAutoS
    public function columnFormats(): array
     {
         return [
-            'B' => NumberFormat::FORMAT_NUMBER
+            'A' => NumberFormat::FORMAT_NUMBER
         ];
+    }
+    public function headings():array
+    {
+        return ["DPI", "Primer Nombre", "Segundo Nombre", "Tercer Nombre", "Primer Apellido", "Segundo Apellido", "Apellido de Casado", "Fecha de Nacimiento", "Creado", "Actualizado"];
     }
 }
 
@@ -141,7 +146,7 @@ class ClienteController extends Controller
     $cldir->save();
 
 
-    telefono::insert($telefonos);
+
 
 
 

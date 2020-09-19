@@ -5,11 +5,12 @@ use App\Municipio as municipio;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\Pais;
 use App\departamento;
 use Illuminate\Validation\Rule;
 
-class ExportMunicipio implements FromCollection
+class ExportMunicipio implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -17,6 +18,10 @@ class ExportMunicipio implements FromCollection
     public function collection()
     {
         return municipio::get();
+    }
+    public function headings():array
+    {
+        return ["ID_Pais", "ID_Municipio", "Municipio", "Creado", "Actualizado"];
     }
 }
 

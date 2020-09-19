@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use App\Pais as pais;
 
 
-class ExportPais implements FromCollection
+class ExportPais implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -17,6 +18,11 @@ class ExportPais implements FromCollection
     {
         return pais::get();
     }
+    public function headings():array
+    {
+        return ["ID", "Pais", "Creado", "Actualizado"];
+    }
+
 }
 class PaisController extends Controller
 {

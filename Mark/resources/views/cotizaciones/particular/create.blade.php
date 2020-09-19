@@ -3,9 +3,14 @@
 
 @section('title', 'Cotización')
 
+@section('vendor-style')
+<!-- vendor css files -->
+<link rel="stylesheet" href="{{ asset(mix('css/pages/data-list-view.css')) }}">
+@endsection
 @section('page-style')
         <!-- Page css files -->
         <link rel="stylesheet" href="{{ asset(mix('css/plugins/forms/wizard.css')) }}">
+        <link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
 @endsection
 @section('content')
 <section id="validation">
@@ -17,7 +22,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form action="{{route('cotizacion-particular.store')}}"  method="POST"  class="steps-validation wizard-circle">
+                        <form action="{{route('cotizacion-particular.store')}}" novalidate  method="POST"  class="steps-validation wizard-circle">
                           @csrf
                         <!-- Step 1 -->
                             <h6><i class="step-icon feather icon-user"></i> Paso 1</h6>
@@ -54,98 +59,59 @@
                                                                           <div class="row">
                                                                             @csrf
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control @error('dpi') is-invalid @enderror" name="dpi" value="{{ old('dpi') }}">
-                                                                                      <label for="last-name-column">DPI</label>
-
-                                                                                      @error('dpi')
-                                                                                          <span class="invalid-feedback" role="alert">
-                                                                                            <strong>{{ $message }}</strong>
-                                                                                          </span>
-                                                                                      @enderror
+                                                                                  <div class="form-group validate">
+                                                                                    <label for="last-name-column">DPI</label>
+                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{13,13}$" data-validation-regex-message=' {{ __('validation.DPIMessage') }} '>
+                                                                                    <p class="help-block"></p>  
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ old('PrimerNombre') }}">
-                                                                                      <label for="last-name-column">Primer Nombre</label>
-
-                                                                                      @error('PrimerNombre')
-                                                                                          <span class="invalid-feedback" role="alert">
-                                                                                              <strong>{{ $message }}</strong>
-                                                                                          </span>
-                                                                                      @enderror
+                                                                                  <div class="form-group validate">
+                                                                                  <label for="last-name-column">Primer Nombre</label>
+                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control" name="PrimerNombre" value="{{ old('PrimerNombre') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ old('SegundoNombre') }}">
-                                                                                      <label for="city-column">Segundo Nombre</label>
-
-                                                                                      @error('SegundoNombre')
-                                                                                <span class="invalid-feedback" role="alert">
-                                                                                    <strong>{{ $message }}</strong>
-                                                                                </span>
-                                                                            @enderror
+                                                                                  <div class="form-group validate">
+                                                                                    <label for="city-column">Segundo Nombre</label>
+                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control" name="SegundoNombre" value="{{ old('SegundoNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ old('TercerNombre') }}">
-
-                                                                                      <label for="country-floating">Tercer Nombre</label>
-                                                                                      @error('TercerNombre')
-                                                                                <span class="invalid-feedback" role="alert">
-                                                                                    <strong>{{ $message }}</strong>
-                                                                                </span>
-                                                                            @enderror
+                                                                                  <div class="form-group validate">
+                                                                                    <label for="country-floating">Tercer Nombre</label>
+                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control" name="TercerNombre" value="{{ old('TercerNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ old('PrimerApellido') }}">
-
-                                                                                      <label for="company-column">Primer Apellido</label>
-                                                                                      @error('PrimerApellido')
-                                                                                <span class="invalid-feedback" role="alert">
-                                                                                    <strong>{{ $message }}</strong>
-                                                                                </span>
-                                                                            @enderror
+                                                                                  <div class="form-group validate">
+                                                                                    <label for="company-column">Primer Apellido</label>
+                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control" name="PrimerApellido" value="{{ old('PrimerApellido') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
-                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ old('SegundoApellido') }}">
-
-                                                                                      <label for="email-id-column">Segundo Apellido</label>
-                                                                                      @error('SegundoApellido')
-                                                                                      <span class="invalid-feedback" role="alert">
-                                                                                          <strong>{{ $message }}</strong>
-                                                                                      </span>
-                                                                                  @enderror
+                                                                                  <div class="form-group validate">
+                                                                                    <label for="email-id-column">Segundo Apellido</label>
+                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control" name="SegundoApellido" value="{{ old('SegundoApellido') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
-                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}">
-
-                                                                                    <label for="email-id-column">Apellido de Casado</label>
-                                                                                    @error('ApellidoCasado')
-                                                                                <span class="invalid-feedback" role="alert">
-                                                                                    <strong>{{ $message }}</strong>
-                                                                                </span>
-                                                                            @enderror
+                                                                                <div class="form-group validate">
+                                                                                  <label for="email-id-column">Apellido de Casado</label>
+                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                  
                                                                                 </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
-                                                                                  <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha') }}">
+                                                                                <div class="form-group validate">
                                                                                   <label for="email-id-column">Fecha Nacimiento</label>
-                                                                                  @error('fecha')
-                                                                                  <span class="invalid-feedback" role="alert">
-                                                                                      <strong>{{ $message }}</strong>
-                                                                                  </span>
-                                                                              @enderror
+                                                                                  <input name="fecha" id="fecha" type="date" class="form-control" value="{{ old('fecha') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
                                                                           </div>
@@ -238,7 +204,7 @@
                                                                 <div class="form-body">
                                                                           <div class="row">
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
+                                                                                  <div class="form-group validate">
                                                                                     <p for="exampleFormControlInput1"><strong>Marca</strong></p>
                                                                                     <select required="required" class="form-control @error('marca') is-invalid @enderror" id="marca" name="marca">
                                                                                       <option value="-1">Seleccione una marca</option>
@@ -250,14 +216,14 @@
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
+                                                                                <div class="form-group validate">
                                                                                   <p><strong>Placa</strong></p>
                                                                                   <input id="placa" placeholder="Placa" type="text" class="form-control @error('placa') is-invalid @enderror" name="placa" value="{{ old('year') }}">
                                                                                 </div>
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
+                                                                                  <div class="form-group validate">
                                                                                     <p for="exampleFormControlSelect1"><strong>Modelo</strong></p>
                                                                                     <select class="form-control" id="modelo" name="modelo">
                                                                                     </select>
@@ -265,14 +231,14 @@
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
+                                                                                <div class="form-group validate">
                                                                                   <p><strong>Chasis</strong></p>
                                                                                   <input id="chasis" placeholder="Chasis" type="text" class="form-control @error('chasis') is-invalid @enderror" name="chasis" value="{{ old('year') }}">
                                                                                 </div>
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
+                                                                                  <div class="form-group validate">
                                                                                     <p for="exampleFormControlSelect2"><strong>Tipo</strong></p>
                                                                                     <select required="required" class="form-control @error('tipo') is-invalid @enderror" id="tipo" name="tipo">
                                                                                       <option value="-1">Seleccione el tipo de vehículo</option>
@@ -284,20 +250,20 @@
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
+                                                                                <div class="form-group validate">
                                                                                   <p><strong>Motor</strong></p>
                                                                                   <input id="motor" placeholder="Motor" type="text" class="form-control @error('motor') is-invalid @enderror" name="motor">
                                                                                 </div>
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                  <div class="form-label-group">
+                                                                                  <div class="form-group validate">
                                                                                     <p for="exampleFormControlTextarea1"><strong>Año</strong></p>
                                                                                     <input id="year" placeholder="Año" type="number" class="form-control @error('year') is-invalid @enderror" name="year">
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-label-group">
+                                                                                <div class="form-group validate">
                                                                                   <p><strong>Color</strong></p>
                                                                                   <input id="color" type="text" class="form-control @error('color') is-invalid @enderror" name="color" placeholder="Color">
                                                                                 </div>
@@ -397,17 +363,17 @@
                                                   <div class="form-group col-md-6">
                                                     <label for="inputCity"><strong>Descripción</strong></label>
                                                     <input type="text" class="form-control" id="descRepuesto" name="" placeholder="Descripción">
-                                                    <label id="desc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="desc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                   </div>
                                                   <div class="form-group col-md-4">
                                                     <label for="inputState"><strong>Cantidad</strong></label>
                                                     <input type="number" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad">
-                                                    <label id="cnt" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="cnt" class="text-danger" style="display:none">El campo es requerido.</label>
                                                   </div>
                                                   <div class="form-group col-md-2">
                                                     <label for="contact-info-vertical"><strong>Valor</strong></label>
                                                     <input type="number" id="valRepuesto" class="form-control" placeholder="C/U">
-                                                    <label id="val" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="val" class="text-danger" style="display:none">El campo es requerido</label>
                                                   </div>
                                                 </div>
                                                 <a class="btn btn-success" onclick="agregarRepuesto();">Agregar</a>
@@ -454,14 +420,14 @@
                                                                                     <div class="form-group">
                                                                                         <label for="first-name-vertical"><strong>Descripción</strong></label>
                                                                                         <input type="text" id="MOD" class="form-control" placeholder="Descripción">
-                                                                                        <label id="MODdesc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="MODdesc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-12">
                                                                                     <div class="form-group">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
                                                                                         <input type="number" id="MOC" class="form-control" placeholder="Costo">
-                                                                                        <label id="MOCcost" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="MOCcost" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -524,14 +490,14 @@
                                                                                     <div class="form-group">
                                                                                         <label for="first-name-vertical"><strong>Descripción</strong></label>
                                                                                         <input type="text" id="OTD" class="form-control" placeholder="Descripción">
-                                                                                        <label id="OTDdesc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="OTDdesc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                       </div>
                                                                                 </div>
                                                                                 <div class="col-12">
                                                                                     <div class="form-group">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
                                                                                         <input type="number" id="OTC" class="form-control" placeholder="Costo">
-                                                                                        <label id="OTCcost" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="OTCcost" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                       </div>
                                                                                 </div>
                                                                             </div>
@@ -1055,8 +1021,10 @@
         <!-- vendor files -->
         <script src="{{ asset(mix('vendors/js/extensions/jquery.steps.min.js')) }}"></script>
         <script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
+        <script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
 @endsection
 @section('page-script')
         <!-- Page js files -->
         <script src="{{ asset(mix('js/scripts/forms/wizard-steps.js')) }}"></script>
+        <script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
 @endsection

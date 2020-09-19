@@ -158,7 +158,7 @@ class ModeloController extends Controller
     {
         $modelo = modelo::where('modelo', 'like', '%' . $request->search . '%')
             ->paginate(20);
-        return \View::make('/modelo/index', compact('modelo'));
+        return \view('/modelo/index', compact('modelo'));
     }
 
     public function filtro () {

@@ -4,10 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Vehiculo as vehiculo;
 use App\Empresa as empresa;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 use App\Marca as marca;
 use App\Modelo as modelo;
 use App\TipoVehiculo as tipovehiculo;
 use Illuminate\Http\Request;
+
+class ExportVehiculo implements FromCollection, WithHeadings
+{
+    /**
+    * @return \Illuminate\Support\Collection
+    */
+    public function collection()
+    {
+        return vehiculo::get();
+    }
+    public function headings():array
+    {
+        return ["ID_Marca", "ID_Modelo", "ID_Tipo", "Placa", "Chasis", "Motor", "Color", "Año"];
+    }
+}
 
 class VehiculoController extends Controller
 {
@@ -23,7 +41,7 @@ class VehiculoController extends Controller
 
         //$vehiculo=vehiculo::paginate(20);
 
-        $vehiculo = vehiculo::with('marca')->with('tipovehiculo')->with('modelo')->paginate(1);
+        $vehiculo = vehiculo::with('marca')->with('tipovehiculo')->with('modelo')->paginate(10);
 
         //dd($vehiculo);
         /*$marcas_total = [];
@@ -39,6 +57,11 @@ class VehiculoController extends Controller
           $tipos_total[$indice] = $tipos->tipo;
         }*/
         return view('/vehiculo/index', compact('vehiculo'), ['breadcrumbs' => $breadcrumbs]);
+    }
+
+    public function download()
+    {
+        return Excel::download(new ExportVehiculo(), 'Vehiculos.xlsx');
     }
 
     /**
@@ -105,7 +128,6 @@ class VehiculoController extends Controller
         'tipo' => 'required|not_in:-1',
         'year' => 'required|regex: /^(0-9)$/'
       ]);*/
-
       $cl = new vehiculo();
       $cl->idEmpresa = 1;
       $cl->idMarca = $request['marca'];

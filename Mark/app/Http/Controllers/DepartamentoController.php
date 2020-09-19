@@ -9,9 +9,10 @@ use Maatwebsite\Excel\Facades\Excel;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 use Validator;
 
-class ExportDespartamento implements FromCollection
+class ExportDespartamento implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -19,6 +20,10 @@ class ExportDespartamento implements FromCollection
     public function collection()
     {
         return departamento::get();
+    }
+    public function headings():array
+    {
+        return ["ID", "Departamento", "Creado", "Actualizado"];
     }
 }
 
@@ -52,7 +57,7 @@ class DepartamentoController extends Controller
     public function search(Request $request)
     {
         $depto = departamento::whereHas('pais', function($query) use ($request) {
-                    $query->where('pais','like','%' . $request->pais .'%');
+                    $query->where('pais','like','%' . $request->search .'%');
         })->orWhere('departamento','like','%' . $request->search . '%')->paginate(10);
 
         $depto->appends($request->all());

@@ -117,10 +117,10 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label>This field is required</label>
+                    <label>El campo es requerido.</label>
                     <div class="controls">
                       <input type="text" name="text" class="form-control"
-                        data-validation-required-message="This field is required" placeholder="First Name">
+                        data-validation-required-message="El campo es requerido." placeholder="First Name">
                     </div>
                   </div>
                   <div class="form-group">
@@ -143,7 +143,7 @@
                     <label>Password Input Field</label>
                     <div class="controls">
                       <input type="password" name="password" class="form-control"
-                        data-validation-required-message="This field is required" placeholder="Password">
+                        data-validation-required-message="El campo es requerido." placeholder="Password">
                     </div>
                   </div>
                   <div class="form-group">
