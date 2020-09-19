@@ -15,7 +15,7 @@ class Cliente extends Model
     ];
 
      protected $hidden = [
-        'id',
+        'id', 'idEmpresa'
     ];
     
     public function getCurrentMonthCount()

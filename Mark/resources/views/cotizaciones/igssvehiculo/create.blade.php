@@ -397,17 +397,17 @@
                                                   <div class="form-group col-md-6">
                                                     <label for="inputCity"><strong>Descripción</strong></label>
                                                     <input type="text" class="form-control" id="descRepuesto" name="" placeholder="Descripción">
-                                                    <label id="desc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="desc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                   </div>
                                                   <div class="form-group col-md-4">
                                                     <label for="inputState"><strong>Cantidad</strong></label>
                                                     <input type="number" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad">
-                                                    <label id="cnt" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="cnt" class="text-danger" style="display:none">El campo es requerido.</label>
                                                   </div>
                                                   <div class="form-group col-md-2">
                                                     <label for="contact-info-vertical"><strong>Valor</strong></label>
                                                     <input type="number" id="valRepuesto" class="form-control" placeholder="C/U">
-                                                    <label id="val" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                    <label id="val" class="text-danger" style="display:none">El campo es requerido.</label>
                                                   </div>
                                                 </div>
                                                 <a class="btn btn-success" onclick="agregarRepuesto();">Agregar</a>
@@ -454,14 +454,14 @@
                                                                                     <div class="form-group">
                                                                                         <label for="first-name-vertical"><strong>Descripción</strong></label>
                                                                                         <input type="text" id="MOD" class="form-control" placeholder="Descripción">
-                                                                                        <label id="MODdesc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="MODdesc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-12">
                                                                                     <div class="form-group">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
                                                                                         <input type="number" id="MOC" class="form-control" placeholder="Costo">
-                                                                                        <label id="MOCcost" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="MOCcost" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -524,14 +524,14 @@
                                                                                     <div class="form-group">
                                                                                         <label for="first-name-vertical"><strong>Descripción</strong></label>
                                                                                         <input type="text" id="OTD" class="form-control" placeholder="Descripción">
-                                                                                        <label id="OTDdesc" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="OTDdesc" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                       </div>
                                                                                 </div>
                                                                                 <div class="col-12">
                                                                                     <div class="form-group">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
                                                                                         <input type="number" id="OTC" class="form-control" placeholder="Costo">
-                                                                                        <label id="OTCcost" class="text-danger" style="display:none">Este campo es requerido</label>
+                                                                                        <label id="OTCcost" class="text-danger" style="display:none">El campo es requerido.</label>
                                                                                       </div>
                                                                                 </div>
                                                                             </div>

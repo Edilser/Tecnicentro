@@ -99,12 +99,12 @@ class VehiculoController extends Controller
     public function store(Request $request)
     {
       //dd($request);
-      $this->validate($request, [
+      /*$this->validate($request, [
         'marca' => 'required|not_in:-1',
         'det' => 'required',
         'tipo' => 'required|not_in:-1',
         'year' => 'required|regex: /^(0-9)$/'
-      ]);
+      ]);*/
       $cl = new vehiculo();
       $cl->idEmpresa = 1;
       $cl->idMarca = $request['marca'];

@@ -116,15 +116,13 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
-    'LettersWhiteSpaces' => 'Los valores deben ser unicamente letras',
-    'DPIMessage' => 'El DPI debe ser un numero de 13 digitos',
-    'NombreMessage' => 'El Nombre debe contener unicamente letras',
-    'ApellidoMessage' => 'El Apellido debe contener unicamente letras',
-    'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos',
-    'YearMessage' => 'Ingrese un año entre 1960 y 2022',
-    'MarcaMessage' => 'Campo requerido',
-    'ModeloMessage' => 'Ingrese un año entre 1960 y 2022',
-    'TipoMessage' => 'Ingrese un año entre 1960 y 2022',
+    'LettersWhiteSpaces' => 'Los valores deben ser unicamente letras.',
+    'DPIMessage' => 'El DPI debe ser un numero de 13 digitos.',
+    'NombreMessage' => 'El Nombre debe contener unicamente letras.',
+    'ApellidoMessage' => 'El Apellido debe contener unicamente letras.',
+    'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos.',
+    'YearMessage' => 'Ingrese un año (4 digitos)',
+    'CampoRequeridoMessage' => 'El campo es requerido.',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

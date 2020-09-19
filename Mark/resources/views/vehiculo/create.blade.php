@@ -63,7 +63,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Año</label>
-                        <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^(19[6-8][0-9]|199[0-9]|20[01][0-9]|202[0-2])$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
+                        <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{4}$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
                         <p class="help-block"></p>
                       </div>
                       <div class="form-group row mb-0">
