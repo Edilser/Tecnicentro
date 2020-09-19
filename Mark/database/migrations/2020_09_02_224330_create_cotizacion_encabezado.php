@@ -17,6 +17,7 @@ class CreateCotizacionEncabezado extends Migration
             $table->id();
             $table->foreignId('idEmpresa');
             $table->foreignId('idClienteVehiculo');
+            $table->integer('tipo');
             $table->date('fecha');
             $table->decimal('total', 10, 2);
             $table->boolean('estado');
