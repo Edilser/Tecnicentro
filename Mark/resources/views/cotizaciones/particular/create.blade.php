@@ -61,56 +61,56 @@
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="last-name-column">DPI</label>
-                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{13,13}$" data-validation-regex-message=' {{ __('validation.DPIMessage') }} '>
+                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}">
                                                                                     <p class="help-block"></p>  
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                   <label for="last-name-column">Primer Nombre</label>
-                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control" name="PrimerNombre" value="{{ old('PrimerNombre') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control" name="PrimerNombre" value="{{ old('PrimerNombre') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="city-column">Segundo Nombre</label>
-                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control" name="SegundoNombre" value="{{ old('SegundoNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control" name="SegundoNombre" value="{{ old('SegundoNombre') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="country-floating">Tercer Nombre</label>
-                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control" name="TercerNombre" value="{{ old('TercerNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control" name="TercerNombre" value="{{ old('TercerNombre') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="company-column">Primer Apellido</label>
-                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control" name="PrimerApellido" value="{{ old('PrimerApellido') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control" name="PrimerApellido" value="{{ old('PrimerApellido') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="email-id-column">Segundo Apellido</label>
-                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control" name="SegundoApellido" value="{{ old('SegundoApellido') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control" name="SegundoApellido" value="{{ old('SegundoApellido') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <label for="email-id-column">Apellido de Casado</label>
-                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}">
                                                                                   
                                                                                 </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <label for="email-id-column">Fecha Nacimiento</label>
-                                                                                  <input name="fecha" id="fecha" type="date" class="form-control" value="{{ old('fecha') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <input name="fecha" id="fecha" type="date" class="form-control" value="{{ old('fecha') }}">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
