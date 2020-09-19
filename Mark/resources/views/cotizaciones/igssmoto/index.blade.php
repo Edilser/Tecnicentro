@@ -65,8 +65,7 @@
                                           <td>{{ $cotizacion->fecha}} </td>
                                           <td>{{ $cotizacion->total}} </td>
                                           <td class="">
-                                            <a href="{ route('cliente.edit', $cliente->id)}}"><i class="feather icon-eye"></i></a></span>
-                                            <a href="{ route('cliente.delete', $cliente->id)}}"><i class="feather icon-download-cloud"></i></a></span>
+                                            <a href="{{route('cotizacionMoto.down', $cotizacion->id)}}"><i class="feather icon-eye"></i></a></span>
                                           </td>
                                         </tr>
                                       @endif

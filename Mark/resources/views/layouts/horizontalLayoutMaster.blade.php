@@ -56,7 +56,7 @@
     @if($configData['blankPage'] == false && isset($configData['blankPage']))
     @include('pages/customizer')
 
-    
+
     @endif
 
     <div class="sidenav-overlay"></div>

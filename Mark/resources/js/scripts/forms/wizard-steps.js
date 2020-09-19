@@ -46,7 +46,9 @@ $(".steps-validation").steps({
     transitionEffect: "fade",
     titleTemplate: '<span class="step">#index#</span> #title#',
     labels: {
-        finish: 'Submit'
+      finish: 'Registrar',
+      next: 'Siguiente',
+      previous: 'Anterior'
     },
     onStepChanging: function (event, currentIndex, newIndex) {
         // Allways allow previous action even if the current form is not valid!
@@ -68,7 +70,7 @@ $(".steps-validation").steps({
         return form.valid();
     },
     onFinished: function (event, currentIndex) {
-        alert("Submitted!");
+      form.submit();
     }
 });
 

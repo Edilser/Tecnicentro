@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ClienteVehiculo as clientevehiculo;
 use App\CotizacionEncabezado as cotizacionencabezado;
+use Luecano\NumeroALetras\NumeroALetras as letras;
 
 class PDFController extends Controller
 {
@@ -55,5 +56,25 @@ class PDFController extends Controller
 
     public function ver ($id) {
 
+    }
+
+    public function moto ($id) {
+      $breadcrumbs = [
+        ['link'=>"/",'name'=>"Home"],['link'=>"/cotizacion-moto", 'name'=>"Cotización IGSS Moto"], ['name' => "Ver Cotización"]];
+
+      $cotizacion = cotizacionencabezado::with('detalle')->with('clientevehiculo')->find($id);
+      $tot_R = 0;
+      $tot_M = 0;
+      //dd($cotizacion);
+      foreach ($cotizacion->detalle as $detalle) {
+        if ($detalle->tipo == 'REPUESTO') $tot_R += floatval($detalle->cantidad * $detalle->valor);
+        else if ($detalle->tipo == 'MO') $tot_M += $detalle->valor;
+      }
+      $tot_R = number_format($tot_R, 2, '.', ',');
+      $tot_M = number_format($tot_M, 2, '.', ',');
+      $total = number_format($cotizacion->total, 2, '.', ',');
+      $salida = new letras;
+      $salida_letras = $salida->toMoney($cotizacion->total, 2, 'Quetzales', 'centavos');
+      return view('/cotizaciones/igssmoto/pdfcotizacion', compact('cotizacion', 'tot_R', 'tot_M', 'total', 'salida_letras'), ['breadcrumbs' => $breadcrumbs]);
     }
 }

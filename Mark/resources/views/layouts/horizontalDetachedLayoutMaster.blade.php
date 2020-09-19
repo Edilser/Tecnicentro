@@ -68,7 +68,7 @@ $configData = Helper::applClasses();
     @if($configData['blankPage'] == false)
     @include('pages/customizer')
 
-    
+
     @endif
 
     <div class="sidenav-overlay"></div>
