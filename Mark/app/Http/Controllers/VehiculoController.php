@@ -110,6 +110,10 @@ class VehiculoController extends Controller
       $cl->idMarca = $request['marca'];
       $cl->idModelo = $request['det'];
       $cl->idTipo = $request['tipo'];
+      $cl->placa = $request['placa'];
+      $cl->chasis = $request['chasis'];
+      $cl->motor = $request['motor'];
+      $cl->color = $request['color'];
       $cl->año = $request['year'];
       $cl->save();
       return redirect ('vehiculo')->with('success', 'vehiculo guardado');

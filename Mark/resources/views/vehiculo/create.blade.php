@@ -62,6 +62,26 @@
                           @enderror
                       </div>
                       <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Placa</label>
+                        <input id="placa" type="text" class="form-control" name="placa" value="{{ old('placa') }}">
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Chasis</label>
+                        <input id="chasis" type="text" class="form-control" name="chasis" value="{{ old('chasis') }}">
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Motor</label>
+                        <input id="motor" type="text" class="form-control" name="motor" value="{{ old('motor') }}">
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Color</label>
+                        <input id="color" type="text" class="form-control" name="color" value="{{ old('color') }}">
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Año</label>
                         <input id="year" type="number" class="form-control" name="year" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{4}$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
                         <p class="help-block"></p>

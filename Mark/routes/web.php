@@ -270,6 +270,7 @@ Route::get('/filtroim/{id}', 'CotIGSSMotoController@filtro')->name('create.filtr
 Route::post('cotizacion-moto/search', 'CotIGSSMotoController@search')->name('cotigssmoto.search');
 Route::get('cotizacion-moto/delete/{id}', 'CotIGSSMotoController@delete')->name('cotigssmoto.delete');
 Route::get('/cotizacion-moto/descargar', 'CotIGSSMotoController@download')->name('cotigssmoto.download');
+Route::get('/cotizacion-moto/cotizacionMoto/{id}', 'PDFController@moto')->name('cotizacionMoto.down');
 Route::resource('cotizacion-moto', 'CotIGSSMotoController');
 
 });

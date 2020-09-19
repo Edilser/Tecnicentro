@@ -137,10 +137,10 @@
                                                 <div class="col-md-5">
                                                     <span>Calle o Avenida</span>
                                                 </div>
-                                               
+
                                                 <input id="calleave" placeholder="Calle o Avenida" type="text"
                                                 class="form-control"
-                                                name="calleave" value="{{ $v->direccion[0]->calleave }}" required 
+                                                name="calleave" value="{{ $v->direccion[0]->calleave }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -154,7 +154,7 @@
 
                                                 <input id="guion" placeholder="# Casa" type="text"
                                                 class="form-control"
-                                                name="guion" value="{{ $v->direccion[0]->numero }}" required 
+                                                name="guion" value="{{ $v->direccion[0]->numero }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -168,7 +168,7 @@
 
                                                 <input id="zona" placeholder="Zona" type="text"
                                                 class="form-control"
-                                                name="zona" value="{{ $v->direccion[0]->zona }}" required 
+                                                name="zona" value="{{ $v->direccion[0]->zona }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -182,21 +182,21 @@
 
                                                 <input id="colonia" placeholder="Colonia" type="text"
                                                 class="form-control"
-                                                name="colonia" value="{{ $v->direccion[0]->colonia }}" required 
+                                                name="colonia" value="{{ $v->direccion[0]->colonia }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
                                         </div>
 
                                 <!-- fin direccion -->
-                                
+
                                 <!-- inicia direccion -->
                                 <div class="col-md-4 col-12">
                                     <div class="form-group validate">
                                         <div class="col-md-2">
                                             <span>Pais</span>
                                         </div>
-                                       
+
                                         <select required="required" placeholder="Pais" class="form-control @error('pais') is-invalid @enderror" id="pais" name="pais">
                                             <option></option>
                                             @foreach ($pais as $p)

@@ -150,7 +150,7 @@ class CotIGSSMotoController extends Controller
 
     $CE->idEmpresa = 1;
     $CE->idClienteVehiculo = $llave_clientevehiculo;
-    $CE->tipo = 1;
+    $CE->tipo = 3;
     $CE->fecha = Carbon::now()->format('Y-m-d');
     $CE->total = $totales;
     $CE->estado = 1;
@@ -179,46 +179,34 @@ class CotIGSSMotoController extends Controller
       }
     }
 
-    if ($request['OTD']) {
-      foreach ($request['OTD'] as $indice => $otd) {
+    if ($request['descripcion']) {
         $CD = new cotizaciondetalle;
         $CD->idCotizacionencabezado = $CE['id'];
-        $CD->tipo = 'OT';
-        $CD->descripcion = $otd;
-        $CD->valor = $request->OTC[$indice];
+        $CD->tipo = 'DESCRIPCION';
+        $CD->descripcion = $request['descripcion'];
         $CD->save();
-      }
     }
 
-    if ($request['kmi']) {
+    if ($request['garantia']) {
       $CD = new cotizaciondetalle;
       $CD->idCotizacionencabezado = $CE['id'];
-      $CD->tipo = 'KMI';
-      $CD->descripcion = 'KMS de ingreso';
-      $CD->valor = $request['kmi'];
+      $CD->tipo = 'GARANTIA';
+      $CD->descripcion = $request['garantia'];
       $CD->save();
     }
 
-    if($request['kmn']) {
+    if ($request['validez']) {
       $CD = new cotizaciondetalle;
       $CD->idCotizacionencabezado = $CE['id'];
-      $CD->tipo = 'KMN';
-      $CD->descripcion = 'KMS de proximo servicio';
-      $CD->valor = $request['kmn'];
+      $CD->tipo = 'VALIDEZ';
+      $CD->descripcion = $request['validez'];
       $CD->save();
     }
 
-    if ($request['notasg']) {
-      $CD = new cotizaciondetalle;
-      $CD->idCotizacionencabezado = $CE['id'];
-      $CD->tipo = 'NOTAS';
-      $CD->descripcion = $request['notasg'];
-      $CD->save();
-    }
     //convertir numeros a letras
     //$salida = new letras;
     //$sal = $salida->toMoney($totales, 2, 'Quetzales', 'centavos');
-
+    return redirect ('cotizacion-moto')->with('success', 'cotizacion guardada');
   }
 
   public function search(Request $request) {
