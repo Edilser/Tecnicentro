@@ -250,11 +250,11 @@
                           </tr>
                           <tr>
                               <th>IVA</th>
-                              <td>{{number_format($total*0.12, 2, '.', ',')}}</td>
+                              <td>{{$cotizacion->total*0.12}}</td>
                           </tr>
                           <tr class="text-danger">
                             <th><strong>TOTAL DE LA REPARACIÓN</strong></th>
-                            <td>{{number_format($total+($total*0.12), 2, '.', ',')}}</td>
+                            <td>{{number_format($cotizacion->total +($cotizacion->total*0.12), 2, '.', ',')}}</td>
                           </tr>
                         </tbody>
                       </table>

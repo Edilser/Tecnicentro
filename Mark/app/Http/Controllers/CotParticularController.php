@@ -218,7 +218,7 @@ class CotParticularController extends Controller
         $CD->descripcion = $request['notasg'];
         $CD->save();
       }
-
+      return redirect ('cotizacion-particular')->with('success', 'cotizacion guardada');
     }
 
     public function search(Request $request) {
