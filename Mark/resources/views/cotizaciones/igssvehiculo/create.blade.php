@@ -3,9 +3,15 @@
 
 @section('title', 'Cotización')
 
+@section('vendor-style')
+<!-- vendor css files -->
+<link rel="stylesheet" href="{{ asset(mix('css/pages/data-list-view.css')) }}">
+@endsection
+
 @section('page-style')
         <!-- Page css files -->
         <link rel="stylesheet" href="{{ asset(mix('css/plugins/forms/wizard.css')) }}">
+        <link rel="stylesheet" type="text/css" href={{ asset(mix('/css/plugins/forms/validation/form-validation.css')) }}>
 @endsection
 @section('content')
 <section id="validation">
@@ -17,7 +23,7 @@
                 </div>
                 <div class="card-content">
                     <div class="card-body">
-                        <form action="{{route('cotizacion-vehiculo.store')}}"  method="POST"  class="steps-validation wizard-circle">
+                        <form action="{{route('cotizacion-vehiculo.store')}}" novalidate  method="POST"  class="steps-validation wizard-circle">
                           @csrf
                         <!-- Step 1 -->
                             <h6><i class="step-icon feather icon-user"></i> Paso 1</h6>
@@ -211,7 +217,7 @@
                                                                               </div>
 
                                                                               <div class="col-md-6 col-12">
-                                                                                <div class="form-group validate">
+                                                                              <div class="form-group validate">
                                                                                   <p><strong>Placa</strong></p>
                                                                                   <input id="placa" placeholder="Placa" type="text" class="form-control" name="placa" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^([A,C,CC,CD,M,MI,O,P,TC,U]{1,2})(\d{3})([A-Z]{3})+$" data-validation-regex-message=' {{ __('validation.PlacaMessage') }} '>
                                                                                   <p class="help-block"></p>
@@ -1045,8 +1051,10 @@
         <!-- vendor files -->
         <script src="{{ asset(mix('vendors/js/extensions/jquery.steps.min.js')) }}"></script>
         <script src="{{ asset(mix('vendors/js/forms/validation/jquery.validate.min.js')) }}"></script>
+        <script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
 @endsection
 @section('page-script')
         <!-- Page js files -->
         <script src="{{ asset(mix('js/scripts/forms/wizard-steps.js')) }}"></script>
+        <script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
 @endsection
