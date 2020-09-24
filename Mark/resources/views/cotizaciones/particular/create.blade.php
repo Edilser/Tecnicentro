@@ -372,12 +372,12 @@
                                                   </div>
                                                   <div class="form-group validate col-md-4">
                                                     <label for="inputState"><strong>Cantidad</strong></label>
-                                                    <input type="number" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
+                                                    <input type="text" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
                                                     <p class="help-block"></p>
                                                   </div>
                                                   <div class="form-group validate col-md-2">
                                                     <label for="contact-info-vertical"><strong>Valor</strong></label>
-                                                    <input type="number" id="valRepuesto" class="form-control" placeholder="C/U" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
+                                                    <input type="text" id="valRepuesto" class="form-control" placeholder="C/U" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
                                                     <p class="help-block"></p>
                                                   </div>
                                                 </div>
@@ -431,7 +431,7 @@
                                                                                 <div class="col-12">
                                                                                     <div class="form-group validate">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
-                                                                                        <input type="number" id="MOC" class="form-control" placeholder="Costo" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
+                                                                                        <input type="text" id="MOC" class="form-control" placeholder="Costo" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
                                                                                         <p class="help-block"></p>
                                                                                     </div>
                                                                                 </div>
@@ -501,7 +501,7 @@
                                                                                 <div class="col-12">
                                                                                     <div class="form-group validate">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
-                                                                                        <input type="number" id="OTC" class="form-control" placeholder="Costo" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
+                                                                                        <input type="text" id="OTC" class="form-control" placeholder="Costo" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
                                                                                         <p class="help-block"></p>
                                                                                       </div>
                                                                                 </div>
@@ -563,7 +563,7 @@
                                                                                 <div class="col-md-6 col-12">
                                                                                     <div class="form-group validate">
                                                                                       <p for="first-name-vertical"><strong>KMS Ingreso</strong></p>
-                                                                                      <input type="number" id="kmi" name="kmi" class="form-control" placeholder="KMS Ingreso" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
+                                                                                      <input type="text" id="kmi" name="kmi" class="form-control" placeholder="KMS Ingreso" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
                                                                                       <p class="help-block"></p>
                                                                                     </div>
                                                                                 </div>
@@ -571,7 +571,7 @@
                                                                                 <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <p for="contact-info-vertical"><strong>KMS Proximo Servicio</strong></p>
-                                                                                    <input type="number" id="kmn" name="kmn" class="form-control" placeholder="KMS Proximo Servicio" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
+                                                                                    <input type="text" id="kmn" name="kmn" class="form-control" placeholder="KMS Proximo Servicio" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                                 </div>
