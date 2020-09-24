@@ -20,7 +20,7 @@
 
                 <div class="card" style="height: 419px;">
                     <div class="card-header">
-                        <h4 class="card-title">Eliminar Departamento</h4>
+                        <h4 class="card-title">Eliminar Municipio</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">

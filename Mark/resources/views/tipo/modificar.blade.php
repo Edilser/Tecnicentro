@@ -34,7 +34,6 @@
                             <div class="col-md-8 offset-md-4">
                                 <a href="{{ url('tipoVehiculo') }}" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Regresar</a>
                                 <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Guardar</button>
-
                             </div>
                         </div>
                 {!! Form::close() !!}

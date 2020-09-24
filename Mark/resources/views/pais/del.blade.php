@@ -20,7 +20,7 @@
 
                 <div class="card" style="height: 419px;">
                     <div class="card-header">
-                        <h4 class="card-title">Editar País</h4>
+                        <h4 class="card-title">Eliminar País</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">

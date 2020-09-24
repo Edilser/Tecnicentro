@@ -16,7 +16,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Modificar Modelos</h4>
+                  <h4 class="card-title">Modificar Modelo</h4>
                 </div>
                 <div class="card-body">
                 {{ Form::model($v, ['method' => 'PATCH', 'novalidate', 'action' => ["ModeloController@update",$id], 'class' => 'form-horizontal']) }}
@@ -48,7 +48,6 @@
                             <div class="col-md-8 offset-md-4">
                                 <a href="{{ url('modelo') }}" class="btn btn-outline-warning mr-1 mb-1 waves-effect waves-light">Regresar</a>
                                 <button type="submit" class="btn btn-primary mr-1 mb-1 waves-effect waves-light">Guardar</button>
-
                             </div>
                         </div>
                 {!! Form::close() !!}

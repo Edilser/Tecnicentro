@@ -9,7 +9,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Borrar Cliente</h4>
+                        <h4 class="card-title">Eliminar Cliente</h4>
                     </div>
                     <div class="card-content">
                         <div class="card-body">
