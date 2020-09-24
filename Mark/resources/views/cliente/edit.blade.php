@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Modificar Clientes')
+@section('title', 'Editar Clientes')
 
 @section('vendor-style')
 <!-- vendor css files -->
@@ -17,7 +17,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Modificar Cliente</h4>
+                    <h4 class="card-title">Editar Cliente</h4>
                 </div>
                 <div class="card-content">
                     <div class="card-body">
