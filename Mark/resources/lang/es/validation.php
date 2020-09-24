@@ -123,6 +123,9 @@ return [
     'TelefonoMessage' => 'El Telefono debe ser un numero de 8 digitos.',
     'YearMessage' => 'Ingrese un año (4 digitos)',
     'CampoRequeridoMessage' => 'El campo es requerido.',
+    'PlacaMessage' => 'El formato de la placa no es valido.',
+    'OnlyNumberMessage' => 'Los valores deben ser unicamente numeros.',
+    'OnlyDecimalNumberMessage' => 'Los valores deben ser unicamente numeros y contener solo dos decimales maximo.',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

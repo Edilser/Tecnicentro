@@ -63,22 +63,22 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Placa</label>
-                        <input id="placa" type="text" class="form-control" name="placa" value="{{ old('placa') }}">
+                        <input id="placa" type="text" class="form-control" name="placa" value="{{ old('placa') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^([A,C,CC,CD,M,MI,O,P,TC,U]{1,2})(\d{3})([A-Z]{3})+$" data-validation-regex-message=' {{ __('validation.PlacaMessage') }} '>
                         <p class="help-block"></p>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Chasis</label>
-                        <input id="chasis" type="text" class="form-control" name="chasis" value="{{ old('chasis') }}">
+                        <input id="chasis" type="text" class="form-control" name="chasis" value="{{ old('chasis') }}" required data-validation-required-message='{{ __('validation.required') }}'>
                         <p class="help-block"></p>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Motor</label>
-                        <input id="motor" type="text" class="form-control" name="motor" value="{{ old('motor') }}">
+                        <input id="motor" type="text" class="form-control" name="motor" value="{{ old('motor') }}" required data-validation-required-message='{{ __('validation.required') }}'>
                         <p class="help-block"></p>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">Color</label>
-                        <input id="color" type="text" class="form-control" name="color" value="{{ old('color') }}">
+                        <input id="color" type="text" class="form-control" name="color" value="{{ old('color') }}" required data-validation-required-message='{{ __('validation.required') }}'>
                         <p class="help-block"></p>
                       </div>
                       <div class="form-group">
