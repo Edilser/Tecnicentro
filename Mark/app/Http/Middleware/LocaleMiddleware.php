@@ -15,6 +15,8 @@ class LocaleMiddleware
      */
     public function handle($request, Closure $next)
     {  
+        
+
         // available language in template array
         $availLocale=['es'=>'es','en'=>'en', 'fr'=>'fr','de'=>'de','pt'=>'pt'];
 

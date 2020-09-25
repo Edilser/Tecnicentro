@@ -63,7 +63,7 @@ class CotParticularController extends Controller
       if (($request['NewOldClienteSelect'] == 'CNew') && ($request['NewOldVehiculoSelect'] == 'VNew')) {
         //dd('registrar en clientevehiculo');
         $cliente = new cliente();
-        $cliente->idEmpresa = 1;
+        $cliente->idEmpresa = $this->emp->id;;
         $cliente->dpi = $request->dpi;
         $cliente->primerNombre = $request->PrimerNombre;
         $cliente->segundoNOmbre = $request->SegundoNombre;
@@ -76,7 +76,7 @@ class CotParticularController extends Controller
         $cliente->save();
 
         $vehi = new vehiculo();
-        $vehi->idEmpresa = 1;
+        $vehi->idEmpresa = $this->emp->id;;
         $vehi->idMarca = $request['marca'];
         $vehi->idModelo = $request['modelo'];
         $vehi->idTipo = $request['tipo'];
@@ -95,7 +95,7 @@ class CotParticularController extends Controller
       } else if (($request['NewOldClienteSelect'] == 'CNew') && ($request['NewOldVehiculoSelect'] == 'VOld')) {
         //dd('obtener vehiculo_id  y nuevo id cliente para registrar en clientevehiculo');
         $cliente = new cliente();
-        $cliente->idEmpresa = 1;
+        $cliente->idEmpresa = $this->emp->id;;
         $cliente->dpi = $request->dpi;
         $cliente->primerNombre = $request->PrimerNombre;
         $cliente->segundoNOmbre = $request->SegundoNombre;
@@ -115,7 +115,7 @@ class CotParticularController extends Controller
       } else if (($request['NewOldClienteSelect'] == 'COld') && ($request['NewOldVehiculoSelect'] == 'VNew')) {
         //dd('obtener cliente_id y nuevo id vehiculo para registrar en clientevehiculo');
         $vehi = new vehiculo();
-        $vehi->idEmpresa = 1;
+        $vehi->idEmpresa = $this->emp->id;;
         $vehi->idMarca = $request['marca'];
         $vehi->idModelo = $request['modelo'];
         $vehi->idTipo = $request['tipo'];
@@ -151,7 +151,7 @@ class CotParticularController extends Controller
         $totales += $total;
       }
 
-      $CE->idEmpresa = 1;
+      $CE->idEmpresa = $this->emp->id;;
       $CE->idClienteVehiculo = $llave_clientevehiculo;
       $CE->tipo = 1;
       $CE->fecha = Carbon::now()->format('Y-m-d');

@@ -69,7 +69,7 @@ class TipoVehiculoController extends Controller
         'tipo' => 'required|regex: /^[A-Za-z0-9\s]+$/'
       ]);*/
       $cl = new tipo();
-      $cl->idEmpresa = 1;
+      $cl->idEmpresa = $this->emp->id;;
       $cl->tipo = $request['tipo'];
       $cl->save();
       return redirect ('tipoVehiculo')->with('success', 'tipo vehiculo guardado');

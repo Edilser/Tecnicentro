@@ -129,7 +129,7 @@ class VehiculoController extends Controller
         'year' => 'required|regex: /^(0-9)$/'
       ]);*/
       $cl = new vehiculo();
-      $cl->idEmpresa = 1;
+      $cl->idEmpresa = $this->emp->id;;
       $cl->idMarca = $request['marca'];
       $cl->idModelo = $request['det'];
       $cl->idTipo = $request['tipo'];
@@ -183,7 +183,7 @@ class VehiculoController extends Controller
         'year' => 'required|regex: /^(0-9)$/'
       ]);*/
       $v = vehiculo::find($id);
-      $v->idEmpresa = 1;
+      $v->idEmpresa = $this->emp->id;;
       $v->idMarca = $request['marca'];
       $v->idModelo = $request['modelo'];
       $v->idTipo = $request['tipo'];

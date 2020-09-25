@@ -7,7 +7,17 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+use App\Empresa;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    protected $emp;
+
+    public function __construct()
+    {
+        $this->emp = Empresa::get()->first();
+        \view::share('empresa', $this->emp);
+    }
 }

@@ -146,7 +146,7 @@
                                                 <table id="tablac" class="table">
                                                     <thead>
                                                         <tr style="cursor: pointer;">
-
+                                                            <th></th>
                                                             <th scope="col">DPI</th>
                                                             <th scope="col">Nombre</th>
                                                             <th scope="col">Apellido</th>
@@ -626,7 +626,7 @@
             console.log('data => ',data);
             $('#datos').empty();
             data.forEach(element => {
-              $('#datos').append("<tr onclick='cliente_seleccionado(this,"+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td>"+element['dpi']+"</td><td>"+element['primerNombre']+" "+element['segundoNombre']+"</td><td>"+element['primerApellido']+" "+element['segundoApellido']+"</td></tr>");
+              $('#datos').append("<tr onclick='cliente_seleccionado(this,"+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td><input type='checkbox'></input></td><td>"+element['dpi']+"</td><td>"+element['primerNombre']+" "+element['segundoNombre']+"</td><td>"+element['primerApellido']+" "+element['segundoApellido']+"</td></tr>");
             });
           },
           error: function (data) {

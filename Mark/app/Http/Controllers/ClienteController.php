@@ -19,6 +19,8 @@ use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
+
+
 class ExportClients implements FromCollection, WithColumnFormatting, ShouldAutoSize, WithHeadings
 {
   /**
@@ -99,9 +101,9 @@ class ClienteController extends Controller
     //   'ApellidoCasado' => 'regex:/^[\pL\s\-]+$/u|nullable',
     //   'fecha' => 'required|nullable|date',
     // ]);
-
+  
     $cl = new c();
-    $cl->idEmpresa = 1;
+    $cl->idEmpresa = $this->emp->id;
     $cl->dpi = $request->dpi;
     $cl->primerNombre = $request->PrimerNombre;
     $cl->segundoNOmbre = $request->SegundoNombre;
@@ -129,7 +131,7 @@ class ClienteController extends Controller
     }
 
     $direccion = new direccion();
-    $direccion->idEmpresa = 1;
+    $direccion->idEmpresa = $this->emp->id;
     $direccion->calleave = $request->calleave;
     $direccion->numero = $request->guion;
     $direccion->zona = $request->zona;
@@ -140,7 +142,7 @@ class ClienteController extends Controller
     $direccion->save();
 
     $cldir = new cd();
-    $cldir->idEmpresa = 1;
+    $cldir->idEmpresa = $this->emp->id;;
     $cldir->idCliente = $cl->id;
     $cldir->idDireccion = $direccion->id;
     $cldir->save();
@@ -240,7 +242,7 @@ class ClienteController extends Controller
     $dir->delete();
 
     $direccion = new direccion();
-    $direccion->idEmpresa = 1;
+    $direccion->idEmpresa = $this->emp->id;;
     $direccion->calleave = $request->calleave;
     $direccion->numero = $request->guion;
     $direccion->zona = $request->zona;
@@ -251,7 +253,7 @@ class ClienteController extends Controller
     $direccion->save();
 
     $cldir = new cd();
-    $cldir->idEmpresa = 1;
+    $cldir->idEmpresa = $this->emp->id;;
     $cldir->idCliente = $v->id;
     $cldir->idDireccion = $direccion->id;
     $cldir->save();

@@ -73,7 +73,7 @@ class MarcaController extends Controller
       ]);
 
       $cl = new marca();
-      $cl->idEmpresa = 1;
+      $cl->idEmpresa = $this->emp->id;;
       $cl->marca = $request['marca'];
       $cl->save();
       return redirect ('marca')->with('success', 'marca guardada');
