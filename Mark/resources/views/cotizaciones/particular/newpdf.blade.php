@@ -1,4 +1,4 @@
-@extends('layouts/contentLayoutMaster')
+@extends('layouts/contentLayoutMasterPDF')
 
 @section('title', 'Cotización')
 
@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{ asset(mix('css/pages/invoice.css')) }}">
 @endsection
 @section('content')
+
   <!-- invoice functionality end -->
 <section class="card invoice-page">
   <div id="invoice-template" class="card-body">
@@ -247,4 +248,5 @@
 @section('page-script')
         <!-- Page js files -->
         <script src="{{ asset(mix('js/scripts/pages/invoice.js')) }}"></script>
+        
 @endsection

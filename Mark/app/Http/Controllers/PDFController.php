@@ -94,7 +94,8 @@ class PDFController extends Controller
       $tot_O = number_format($tot_O, 2, '.', ',');
       $total = number_format($cotizacion->total, 2, '.', ',');
 
-      return PDF::loadView('/cotizaciones/particular/newpdf', compact('cotizacion', 'tot_R', 'tot_M', 'tot_O', 'total'))
-      ->download('Cotizacion.pdf');
+      //return view('/cotizaciones/particular/newpdf', compact('cotizacion', 'tot_R', 'tot_M', 'tot_O', 'total'));
+      return PDF::loadView('/cotizaciones/particular/newpdf', compact('cotizacion', 'tot_R', 'tot_M', 'tot_O', 'total'))->download('Cotizacion.pdf');
+
     }
 }
