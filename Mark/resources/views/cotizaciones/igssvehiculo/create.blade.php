@@ -368,18 +368,18 @@
                                                 <div class="form-row">
                                                   <div class="form-group validate col-md-6">
                                                     <label for="inputCity"><strong>Descripción</strong></label>
-                                                    <input type="text" class="form-control" id="descRepuesto" name="" placeholder="Descripción" required data-validation-required-message='{{ __('validation.required') }}'>
-                                                    <p class="help-block"></p>
+                                                    <input type="text" class="form-control" id="descRepuesto" name="" placeholder="Descripción">
+                                                    <label id="desc" class="text-danger"></label>
                                                   </div>
                                                   <div class="form-group validate col-md-4">
                                                     <label for="inputState"><strong>Cantidad</strong></label>
-                                                    <input type="text" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+$" data-validation-regex-message=' {{ __('validation.OnlyNumberMessage') }} '>
-                                                    <p class="help-block"></p>
+                                                    <input type="text" class="form-control" id="cntRepuesto" name="" placeholder="Cantidad">
+                                                    <label id="cnt" class="text-danger"></label>
                                                   </div>
                                                   <div class="form-group validate col-md-2">
                                                     <label for="contact-info-vertical"><strong>Valor</strong></label>
-                                                    <input type="text" id="valRepuesto" class="form-control" placeholder="C/U" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
-                                                    <p class="help-block"></p>
+                                                    <input type="text" id="valRepuesto" class="form-control" placeholder="C/U">
+                                                    <label id="val" class="text-danger"></label>
                                                   </div>
                                                 </div>
                                                 <a class="btn btn-success" onclick="agregarRepuesto();">Agregar</a>
@@ -425,15 +425,15 @@
                                                                                 <div class="col-12">
                                                                                     <div class="form-group validate">
                                                                                         <label for="first-name-vertical"><strong>Descripción</strong></label>
-                                                                                        <input type="text" id="MOD" class="form-control" placeholder="Descripción" required data-validation-required-message='{{ __('validation.required') }}'>
-                                                                                        <p class="help-block"></p>
+                                                                                        <input type="text" id="MOD" class="form-control" placeholder="Descripción">
+                                                                                        <label id="verifyMOD" class="text-danger"></label>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="col-12">
                                                                                     <div class="form-group validate">
                                                                                         <label for="contact-info-vertical"><strong>Costo</strong></label>
-                                                                                        <input type="text" id="MOC" class="form-control" placeholder="Costo" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^\d+(\.\d{1,2})?$" data-validation-regex-message=' {{ __('validation.OnlyDecimalNumberMessage') }} '>
-                                                                                        <p class="help-block"></p>
+                                                                                        <input type="text" id="MOC" class="form-control" placeholder="Costo">
+                                                                                        <label id="verifyMOC" class="text-danger"></label>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -651,7 +651,7 @@
             console.log('data => ',data);
             $('#datos').empty();
             data.forEach(element => {
-              $('#datos').append("<tr onclick='cliente_seleccionado("+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td>"+element['dpi']+"</td><td>"+element['primerNombre']+" "+element['segundoNombre']+"</td><td>"+element['primerApellido']+" "+element['segundoApellido']+"</td></tr>");
+              $('#datos').append("<tr onclick='cliente_seleccionado("+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td><input type='radio' name='select_cliente' style='cursor: pointer;' required></input></td><td>"+element['dpi']+"</td><td>"+element['primerNombre']+" "+element['segundoNombre']+"</td><td>"+element['primerApellido']+" "+element['segundoApellido']+"</td></tr>");
             });
           },
           error: function (data) {
@@ -664,6 +664,14 @@
     });
 
     $("#clienteN-tab").click(function () {
+      document.getElementById('dpi').disabled=false;
+      document.getElementById('PrimerNombre').disabled=false;
+      document.getElementById('SegundoNombre').disabled=false;
+      document.getElementById('TercerNombre').disabled=false;
+      document.getElementById('PrimerApellido').disabled=false;
+      document.getElementById('SegundoApellido').disabled=false;
+      document.getElementById('ApellidoCasado').disabled=false;
+      document.getElementById('fecha').disabled=false;
       $('#search').val('');
       $('#datos').empty();
       $('#NewOldCliente').empty();
@@ -671,6 +679,14 @@
     });
 
     $("#clienteO-tab").click(function () {
+      document.getElementById('dpi').disabled=true;
+      document.getElementById('PrimerNombre').disabled=true;
+      document.getElementById('SegundoNombre').disabled=true;
+      document.getElementById('TercerNombre').disabled=true;
+      document.getElementById('PrimerApellido').disabled=true;
+      document.getElementById('SegundoApellido').disabled=true;
+      document.getElementById('ApellidoCasado').disabled=true;
+      document.getElementById('fecha').disabled=true;
       $('#search').val('');
       $('#datos').empty();
       $('#NewOldCliente').empty();
@@ -678,6 +694,14 @@
     });
 
     $("#vehiculoN-tab").click(function () {
+      document.getElementById('marca').disabled=false;
+      document.getElementById('modelo').disabled=false;
+      document.getElementById('tipo').disabled=false;
+      document.getElementById('year').disabled=false;
+      document.getElementById('placa').disabled=false;
+      document.getElementById('chasis').disabled=false;
+      document.getElementById('motor').disabled=false;
+      document.getElementById('color').disabled=false;
       $('#search2').val('');
       $('#vehiculos').empty();
       $('#NewOldVehiculo').empty();
@@ -685,6 +709,14 @@
     });
 
     $("#vehiculoO-tab").click(function () {
+      document.getElementById('marca').disabled=true;
+      document.getElementById('modelo').disabled=true;
+      document.getElementById('tipo').disabled=true;
+      document.getElementById('year').disabled=true;
+      document.getElementById('placa').disabled=true;
+      document.getElementById('chasis').disabled=true;
+      document.getElementById('motor').disabled=true;
+      document.getElementById('color').disabled=true;
       $('#search2').val('');
       $('#vehiculos').empty();
       $('#NewOldVehiculo').empty();
@@ -703,7 +735,7 @@
             console.log('data => ',data);
             $('#vehiculos').empty();
             data.forEach(element => {
-              $('#vehiculos').append("<tr onclick='vehiculo_seleccionado("+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td>"+element['placa']+"</td><td>"+element['marca'][0].marca+"</td><td>"+element['modelo'][0].modelo+"</td><td>"+element['tipovehiculo'][0].tipo+"</td><td>"+element['color']+"</td><td>"+element['año']+"</td></tr>");
+              $('#vehiculos').append("<tr onclick='vehiculo_seleccionado("+element['id']+")' value='"+element['id']+"' style='cursor: pointer;'><td><input type='radio' name='select_vehiculo' style='cursor: pointer;' required></input></td><td>"+element['placa']+"</td><td>"+element['marca'][0].marca+"</td><td>"+element['modelo'][0].modelo+"</td><td>"+element['tipovehiculo'][0].tipo+"</td><td>"+element['color']+"</td><td>"+element['año']+"</td></tr>");
             });
           },
           error: function (data) {
@@ -768,33 +800,65 @@
     var valor = $('#valRepuesto').val();
     var cnt2 = parseInt(cnt);
     var valor2 = parseFloat(valor);
+    var pa3 =  /^\d*$/;
+    var pa2 = /^\d*(\.\d{0,})$/;
+
+    var descb = "0";
+    var cntb = "0";
+    var valorb = "0";
 
     if (desc == ''){
-      document.getElementById("desc").style.display = "block";
+      document.getElementById('desc').innerHTML = 'Este campo es requerido';
+      descb = "1";
     } else {
-      document.getElementById("desc").style.display = "none";
+      document.getElementById('desc').innerHTML = '';
+        descb = "0";
     }
 
-    if (cnt == '' || cnt2 < 1) {
-      document.getElementById("cnt").style.display = "block";
+    if (cnt == '') {
+      document.getElementById('cnt').innerHTML = 'Este campo es requerido';
+      cntb = "1";
+    } else if (pa3.test(cnt)) {
+      if (cnt2 < 1) {
+        document.getElementById('cnt').innerHTML = 'Debe ingresar un valor mayor que 0';
+        cntb = "1";
+      } else {
+        document.getElementById('cnt').innerHTML = '';
+        cntb = "0";
+      }
     } else {
-      document.getElementById("cnt").style.display = "none";
+      document.getElementById('cnt').innerHTML = 'Debe ingresar unicamente digitos';
+      cntb = "1";
     }
 
-    if (valor == '' || valor2 < 0.0000000000001) {
-      document.getElementById("val").style.display = "block";
+    if (valor == '') {
+      document.getElementById('val').innerHTML = 'Este campo es requerido';
+      valorb = "1";
+    } else if (pa2.test(valor) || pa3.test(valor)) {
+      if (valor2 < 0.0000000000001) {
+        document.getElementById('val').innerHTML = 'Debe ingresar un valor mayor que 0';
+        valorb = "1";
+      } else {
+        document.getElementById('val').innerHTML = '';
+        valorb = "0";
+      }
     } else {
-      document.getElementById("val").style.display = "none";
+      document.getElementById('val').innerHTML = 'Debe ingresar unicamente digitos';
+      valorb = "1";
     }
 
-    if (desc == '' || cnt == '' || valor == '' || cnt2 < 1 || valor2 < 0.0000000000000000000001) {
-      estado = true;
+    if ((descb == "0") && (cntb == "0") && (valorb == "0")) {
+      estado = false;
+    } else {
+      estado = true
     }
 
     if (estado == true) {
-      return false
+      return false;
     } else {
-      var resultado = (parseInt(cnt) * parseFloat(valor));
+      var val_f = parseFloat(valor);
+      var x = val_f.toFixed(2);
+      var resultado = (parseInt(cnt) * x);
       resultado.toFixed(2);
       var to_valor = parseFloat(valor);
       to_valor.toFixed(2);
@@ -811,7 +875,7 @@
                 var newCelleTotal = newRow.insertCell(8);
                 var newText = document.createTextNode(desc);
                 var newText2 = document.createTextNode(cnt);
-                var newText3 = document.createTextNode(to_valor);
+                var newText3 = document.createTextNode(to_valor.toFixed(2));
                 var newText4 = document.createTextNode(resultado.toFixed(2));
                 newCell.appendChild(newText);
                 newCell2.appendChild(newText2);
@@ -836,7 +900,7 @@
 
                 var input3 = document.createElement('input');
                 input3.name = "repuestosV[]";
-                input3.setAttribute('value', to_valor);
+                input3.setAttribute('value', to_valor.toFixed(2));
                 input3.type = "text";
                 input3.hidden =true;
                 newCelle.appendChild(input3);
@@ -849,7 +913,7 @@
 
                 var input4 = document.createElement('input');
                 input4.name = "TotalEncabezado[]";
-                input4.setAttribute('value', resultado);
+                input4.setAttribute('value', resultado.toFixed(2));
                 input4.type = "text";
                 input4.hidden =true;
                 newCelleTotal.appendChild(input4);
@@ -879,21 +943,42 @@
     var desc = $("#MOD").val();
     var valor = $('#MOC').val();
     var valor2 = parseFloat(valor);
+    var pa3 = /\d$/;
+    var pa4 = /^\d/;
+    var pa2 = /^\d*(\.\d{0,2})$/;
+
+    var descb = "0";
+    var valorb = "0";
 
     if (desc == ''){
-      document.getElementById("MODdesc").style.display = "block";
+      document.getElementById('verifyMOD').innerHTML = 'Este campo es requerido';
+      descb = "1";
     } else {
-      document.getElementById("MODdesc").style.display = "none";
+      document.getElementById('verifyMOD').innerHTML = '';
+      descb = "0";
     }
 
-    if (valor == '' || valor2 < 0.0000000000001) {
-      document.getElementById("MOCcost").style.display = "block";
+    if (valor == '') {
+      document.getElementById('verifyMOC').innerHTML = 'Este campo es requerido';
+      valorb = "1";
+    } else if(pa2.test(valor) || (pa3.test(valor) && pa4.test(valor))){
+      if (valor2 < 0.0000000000001) {
+        document.getElementById('verifyMOC').innerHTML = 'Debe ingresar un valor mayor que 0';
+        valorb = "1";
+      } else {
+        document.getElementById('verifyMOC').innerHTML = '';
+        console.log(valor2.toFixed(2));
+        valorb = "0";
+      }
     } else {
-      document.getElementById("MOCcost").style.display = "none";
+      document.getElementById('verifyMOC').innerHTML = 'Debe ingresar unicamente digitos';
+      valorb = "1";
     }
 
-    if (desc == '' || valor == '' || valor2 < 0.0000000000000000000001) {
-      estado = true;
+    if ((descb == '0') && (valorb == '0')) {
+      estado = false;
+    } else {
+      estado = true
     }
 
     if (estado == true) {
@@ -909,7 +994,7 @@
                 var newCelld = newRow.insertCell(4);
                 var newCelldTotal = newRow.insertCell(5);
                 var newText = document.createTextNode(desc);
-                var newText2 = document.createTextNode(valor);
+                var newText2 = document.createTextNode(valor2.toFixed(2));
                 newCell.appendChild(newText);
                 newCell2.appendChild(newText2);
 
@@ -924,7 +1009,7 @@
 
                 var input2 = document.createElement('input');
                 input2.name = "MOC[]";
-                input2.setAttribute('value', valor);
+                input2.setAttribute('value', valor2.toFixed(2));
                 input2.type = "text";
                 input2.hidden =true;
                 newCellc.appendChild(input2);
@@ -937,7 +1022,7 @@
 
                 var input4 = document.createElement('input');
                 input4.name = "TotalEncabezado[]";
-                input4.setAttribute('value', valor);
+                input4.setAttribute('value', valor2.toFixed(2));
                 input4.type = "text";
                 input4.hidden =true;
                 newCelldTotal.appendChild(input4);
