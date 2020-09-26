@@ -7,25 +7,6 @@
         <link rel="stylesheet" href="{{ asset(mix('css/pages/invoice.css')) }}">
 @endsection
 @section('content')
-<!-- invoice functionality start-->
-<section class="invoice-print mb-1">
-    <div class="row">
-      <fieldset class="col-12 col-md-5 mb-1 mb-md-0">
-        <div class="input-group">
-          <!--<input type="text" class="form-control" placeholder="Email" aria-describedby="button-addon2">
-          <div class="input-group-append" id="button-addon2">
-            <button class="btn btn-outline-primary" type="button">Send Invoice</button>
-          </div>-->
-        </div>
-      </fieldset>
-      <div class="col-12 col-md-7 d-flex flex-column flex-md-row justify-content-end">
-        <a href="{{url('/cotizacion-particular')}}" class="btn btn-outline-danger  mr-1 ml-md-1"> <i class="feather icon-arrow-left"></i>Regresar</a>
-        <button class="btn btn-primary btn-print mb-1 mb-md-0"> <i class="feather icon-file-text"></i> Imprimir</button>
-        <a href="{{route('cotizacion-particular.pdf', $cotizacion->id)}}" class="btn btn-outline-primary ml-0 ml-md-1"> <i class="feather icon-download"></i>Descargar</a>
-      </div>
-    </div>
-  </section>
-
   <!-- invoice functionality end -->
 <section class="card invoice-page">
   <div id="invoice-template" class="card-body">

@@ -249,6 +249,7 @@ Route::get('/filtro/{id}', 'CotParticularController@filtro')->name('create.filtr
 Route::post('cotizacion-particular/search', 'CotParticularController@search')->name('cotparticular.search');
 Route::get('cotizacion-particular/delete/{id}', 'CotParticularController@delete')->name('cotparticular.delete');
 Route::get('/cotizacion-particular/descargar', 'CotParticularController@download')->name('cotparticular.download');
+Route::get('/cotizacion-particular/CotizacionPdf/{id}', 'PDFController@particular_pdf')->name('cotizacion-particular.pdf');
 Route::get('/cotizacion-particular/cotizacionParticular/{id}', 'PDFController@particular')->name('cotizacionParticular.down');
 Route::get('/cotizacion-particular/viewCotizacion/{id}', 'PDFController@ver')->name('cotizacionParticular.ver');
 Route::resource('cotizacion-particular', 'CotParticularController');

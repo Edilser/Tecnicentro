@@ -62,56 +62,56 @@
                                                                             <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="last-name-column">DPI</label>
-                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{13,13}$" data-validation-regex-message=' {{ __('validation.DPIMessage') }} '>
+                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="last-name-column">Primer Nombre</label>
-                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ old('PrimerNombre') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ old('PrimerNombre') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="city-column">Segundo Nombre</label>
-                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ old('SegundoNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ old('SegundoNombre') }}" >
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="country-floating">Tercer Nombre</label>
-                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ old('TercerNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
+                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ old('TercerNombre') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="company-column">Primer Apellido</label>
-                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ old('PrimerApellido') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ old('PrimerApellido') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="email-id-column">Segundo Apellido</label>
-                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ old('SegundoApellido') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ old('SegundoApellido') }}">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <label for="email-id-column">Apellido de Casado</label>
-                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
+                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <label for="email-id-column">Fecha Nacimiento</label>
-                                                                                  <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha') }}">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
@@ -219,7 +219,7 @@
                                                                               <div class="col-md-6 col-12">
                                                                               <div class="form-group validate">
                                                                                   <p><strong>Placa</strong></p>
-                                                                                  <input id="placa" placeholder="Placa" type="text" class="form-control" name="placa" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^([A,C,CC,CD,M,MI,O,P,TC,U]{1,2})(\d{3})([A-Z]{3})+$" data-validation-regex-message=' {{ __('validation.PlacaMessage') }} '>
+                                                                                  <input id="placa" placeholder="Placa" type="text" class="form-control" name="placa" value="{{ old('year') }}">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
@@ -235,7 +235,7 @@
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <p><strong>Chasis</strong></p>
-                                                                                  <input id="chasis" placeholder="Chasis" type="text" class="form-control" name="chasis" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <input id="chasis" placeholder="Chasis" type="text" class="form-control" name="chasis" value="{{ old('year') }}">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
@@ -255,7 +255,7 @@
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <p><strong>Motor</strong></p>
-                                                                                  <input id="motor" placeholder="Motor" type="text" class="form-control" name="motor" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <input id="motor" placeholder="Motor" type="text" class="form-control" name="motor">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
@@ -263,14 +263,14 @@
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <p for="exampleFormControlTextarea1"><strong>Año</strong></p>
-                                                                                    <input id="year" placeholder="Año" type="number" class="form-control" name="year" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{4}$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
+                                                                                    <input id="year" placeholder="Año" type="number" class="form-control" name="year">
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                   <p><strong>Color</strong></p>
-                                                                                  <input id="color" type="text" class="form-control" name="color" placeholder="Color" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                  <input id="color" type="text" class="form-control" name="color" placeholder="Color">
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
