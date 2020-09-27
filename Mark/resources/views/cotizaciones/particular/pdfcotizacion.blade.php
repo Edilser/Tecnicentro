@@ -25,7 +25,6 @@
       </div>
     </div>
   </section>
-
   <!-- invoice functionality end -->
 <section class="card invoice-page">
   <div id="invoice-template" class="card-body">
@@ -242,7 +241,7 @@
         <div class="">
           <h4 class="text-danger text-center"><strong>Notas</strong></h4>
           @foreach ($cotizacion->detalle as $detalle)
-              @if ($detalle == 'NOTAS')
+              @if ($detalle->tipo == 'NOTAS')
                 <p class="text-justify">{{$detalle->descripcion}}</p>
               @endif
           @endforeach

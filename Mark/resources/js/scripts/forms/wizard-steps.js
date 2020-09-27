@@ -51,6 +51,8 @@ $(".steps-validation").steps({
       previous: 'Anterior'
     },
     onStepChanging: function (event, currentIndex, newIndex) {
+      console.log('curr => ', currentIndex);
+      console.log('new => ', newIndex);
         // Allways allow previous action even if the current form is not valid!
         if (currentIndex > newIndex) {
             return true;
@@ -63,6 +65,7 @@ $(".steps-validation").steps({
             form.find(".body:eq(" + newIndex + ") .error").removeClass("error");
         }
         form.validate().settings.ignore = ":disabled,:hidden";
+        console.log('validate form => ', form.valid());
         return form.valid();
     },
     onFinishing: function (event, currentIndex) {

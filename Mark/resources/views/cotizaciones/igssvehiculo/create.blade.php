@@ -47,6 +47,7 @@
                                         <div class="tab-content">
                                           <!--NUEVO CLIENTE-->
                                           <div class="tab-pane active" id="clienteN" aria-labelledby="clienteN-tab" role="tabpanel">
+                                          <section id="idNewCliente">
                                             <section id="multiple-column-form">
                                               <div class="row match-height">
                                                   <div class="col-12">
@@ -62,56 +63,56 @@
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="last-name-column">DPI</label>
-                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}">
+                                                                                    <input placeholder="DPI" id="dpi" type="text" class="form-control" name="dpi" value="{{ old('dpi') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{13,13}$" data-validation-regex-message=' {{ __('validation.DPIMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="last-name-column">Primer Nombre</label>
-                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ old('PrimerNombre') }}">
+                                                                                    <input placeholder="Primer Nombre" id="PrimerNombre" type="text" class="form-control @error('PrimerNombre') is-invalid @enderror" name="PrimerNombre" value="{{ old('PrimerNombre') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="city-column">Segundo Nombre</label>
-                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ old('SegundoNombre') }}">
+                                                                                    <input id="SegundoNombre" placeholder="Segundo Nombre" type="text" class="form-control @error('SegundoNombre') is-invalid @enderror" name="SegundoNombre" value="{{ old('SegundoNombre') }}" required data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="country-floating">Tercer Nombre</label>
-                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ old('TercerNombre') }}">
+                                                                                    <input id="TercerNombre" placeholder="Tecer Nombre" type="text" class="form-control @error('TercerNombre') is-invalid @enderror" name="TercerNombre" value="{{ old('TercerNombre') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.NombreMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                     <label for="company-column">Primer Apellido</label>
-                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ old('PrimerApellido') }}">
+                                                                                    <input id="PrimerApellido" placeholder="Primer Apellido" type="text" class="form-control @error('PrimerApellido') is-invalid @enderror" name="PrimerApellido" value="{{ old('PrimerApellido') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                   <div class="form-group validate">
                                                                                   <label for="email-id-column">Segundo Apellido</label>
-                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ old('SegundoApellido') }}">
+                                                                                    <input id="SegundoApellido" placeholder="Segundo Apellido" type="text" class="form-control @error('SegundoApellido') is-invalid @enderror" name="SegundoApellido" value="{{ old('SegundoApellido') }}" required data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
                                                                                     <p class="help-block"></p>
                                                                                   </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                 <label for="email-id-column">Apellido de Casado</label>
-                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}">
+                                                                                  <input id="ApellidoCasado" placeholder="Apellido de Casado" type="text" class="form-control @error('ApellidoCasado') is-invalid @enderror" name="ApellidoCasado" value="{{ old('ApellidoCasado') }}" data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" data-validation-regex-message=' {{ __('validation.ApellidoMessage') }} '>
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
                                                                               <div class="col-md-6 col-12">
                                                                                 <div class="form-group validate">
                                                                                 <label for="email-id-column">Fecha Nacimiento</label>
-                                                                                  <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha') }}">
+                                                                                  <input name="fecha" id="fecha" type="date" class="form-control @error('fecha') is-invalid @enderror" value="{{ old('fecha') }}" required data-validation-required-message='{{ __('validation.required') }}'>
                                                                                   <p class="help-block"></p>
                                                                                 </div>
                                                                               </div>
@@ -123,6 +124,7 @@
                                                   </div>
                                               </div>
                                             </section>
+                                          </section>
                                           </div>
                                           <!--CLIENTE EXISTENTE-->
                                           <div class="tab-pane" id="clienteO" aria-labelledby="clienteO-tab" role="tabpanel">
@@ -193,96 +195,97 @@
                                           <div class="tab-content">
                                             <div class="tab-pane active" id="vehiculoN" aria-labelledby="vehiculoN-tab" role="tabpanel">
                                               <!--NUEVO VEHICULO-->
-                                            <section id="multiple-column-form">
-                                              <div class="row match-height">
-                                                  <div class="col-12">
-                                                      <div class="card">
-                                                          <div class="card-header">
-                                                              <h4 class="card-title">Registro de Vehiculo</h4>
-                                                          </div>
-                                                          <div class="card-content">
-                                                              <div class="card-body">
-                                                                <div class="form-body">
-                                                                          <div class="row">
-                                                                              <div class="col-md-6 col-12">
-                                                                                  <div class="form-group validate">
-                                                                                    <p for="exampleFormControlInput1"><strong>Marca</strong></p>
-                                                                                    <select required="required" class="form-control @error('marca') is-invalid @enderror" id="marca" name="marca">
-                                                                                      <option value="-1">Seleccione una marca</option>
-                                                                                      @foreach ($marcas as $marca)
-                                                                                        <option value="{{$marca->id}}">{{$marca->marca}}</option>
-                                                                                      @endforeach
-                                                                                    </select>
+                                              <section id="idNewVehiculo">
+                                                <section id="multiple-column-form">
+                                                  <div class="row match-height">
+                                                      <div class="col-12">
+                                                          <div class="card">
+                                                              <div class="card-header">
+                                                                  <h4 class="card-title">Registro de Vehiculo</h4>
+                                                              </div>
+                                                              <div class="card-content">
+                                                                  <div class="card-body">
+                                                                    <div class="form-body">
+                                                                              <div class="row">
+                                                                                  <div class="col-md-6 col-12">
+                                                                                      <div class="form-group validate">
+                                                                                        <p for="exampleFormControlInput1"><strong>Marca</strong></p>
+                                                                                        <select required class="form-control @error('marca') is-invalid @enderror" id="marca" name="marca">
+                                                                                          <option value="-1">Seleccione una marca</option>
+                                                                                          @foreach ($marcas as $marca)
+                                                                                            <option value="{{$marca->id}}">{{$marca->marca}}</option>
+                                                                                          @endforeach
+                                                                                        </select>
+                                                                                      </div>
                                                                                   </div>
-                                                                              </div>
 
-                                                                              <div class="col-md-6 col-12">
-                                                                              <div class="form-group validate">
-                                                                                  <p><strong>Placa</strong></p>
-                                                                                  <input id="placa" placeholder="Placa" type="text" class="form-control" name="placa" value="{{ old('year') }}">
-                                                                                  <p class="help-block"></p>
-                                                                                </div>
-                                                                              </div>
-
-                                                                              <div class="col-md-6 col-12">
-                                                                                  <div class="form-group validate">
-                                                                                    <p for="exampleFormControlSelect1"><strong>Modelo</strong></p>
-                                                                                    <select class="form-control" id="modelo" name="modelo">
-                                                                                    </select>
+                                                                                  <div class="col-md-6 col-12">
+                                                                                    <div class="form-group validate">
+                                                                                      <p><strong>Placa</strong></p>
+                                                                                      <input id="placa" placeholder="Placa" type="text" class="form-control" name="placa" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^([A,C,CC,CD,M,MI,O,P,TC,U]{1,2})(\d{3})([A-Z]{3})+$" data-validation-regex-message=' {{ __('validation.PlacaMessage') }} '>
+                                                                                      <p class="help-block"></p>
+                                                                                    </div>
                                                                                   </div>
-                                                                              </div>
 
-                                                                              <div class="col-md-6 col-12">
-                                                                                <div class="form-group validate">
-                                                                                  <p><strong>Chasis</strong></p>
-                                                                                  <input id="chasis" placeholder="Chasis" type="text" class="form-control" name="chasis" value="{{ old('year') }}">
-                                                                                  <p class="help-block"></p>
-                                                                                </div>
-                                                                              </div>
-
-                                                                              <div class="col-md-6 col-12">
-                                                                                  <div class="form-group validate">
-                                                                                    <p for="exampleFormControlSelect2"><strong>Tipo</strong></p>
-                                                                                    <select required="required" class="form-control @error('tipo') is-invalid @enderror" id="tipo" name="tipo">
-                                                                                      <option value="-1">Seleccione el tipo de vehículo</option>
-                                                                                      @foreach ($tipos as $tipo)
-                                                                                        <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
-                                                                                      @endforeach
-                                                                                    </select>
+                                                                                  <div class="col-md-6 col-12">
+                                                                                      <div class="form-group validate">
+                                                                                        <p for="exampleFormControlSelect1"><strong>Modelo</strong></p>
+                                                                                        <select class="form-control" id="modelo" name="modelo">
+                                                                                        </select>
+                                                                                      </div>
                                                                                   </div>
-                                                                              </div>
 
-                                                                              <div class="col-md-6 col-12">
-                                                                                <div class="form-group validate">
-                                                                                  <p><strong>Motor</strong></p>
-                                                                                  <input id="motor" placeholder="Motor" type="text" class="form-control" name="motor">
-                                                                                  <p class="help-block"></p>
-                                                                                </div>
-                                                                              </div>
-
-                                                                              <div class="col-md-6 col-12">
-                                                                                  <div class="form-group validate">
-                                                                                    <p for="exampleFormControlTextarea1"><strong>Año</strong></p>
-                                                                                    <input id="year" placeholder="Año" type="number" class="form-control" name="year">
-                                                                                    <p class="help-block"></p>
+                                                                                  <div class="col-md-6 col-12">
+                                                                                    <div class="form-group validate">
+                                                                                      <p><strong>Chasis</strong></p>
+                                                                                      <input id="chasis" placeholder="Chasis" type="text" class="form-control" name="chasis" value="{{ old('year') }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                      <p class="help-block"></p>
+                                                                                    </div>
                                                                                   </div>
-                                                                              </div>
-                                                                              <div class="col-md-6 col-12">
-                                                                                <div class="form-group validate">
-                                                                                  <p><strong>Color</strong></p>
-                                                                                  <input id="color" type="text" class="form-control" name="color" placeholder="Color">
-                                                                                  <p class="help-block"></p>
-                                                                                </div>
+
+                                                                                  <div class="col-md-6 col-12">
+                                                                                      <div class="form-group validate">
+                                                                                        <p for="exampleFormControlSelect2"><strong>Tipo</strong></p>
+                                                                                        <select class="form-control" id="tipo" name="tipo" required>
+                                                                                          <option value="-1">Seleccione el tipo de vehículo</option>
+                                                                                          @foreach ($tipos as $tipo)
+                                                                                            <option value="{{$tipo->id}}">{{$tipo->tipo}}</option>
+                                                                                          @endforeach
+                                                                                        </select>
+                                                                                      </div>
+                                                                                  </div>
+
+                                                                                  <div class="col-md-6 col-12">
+                                                                                    <div class="form-group validate">
+                                                                                      <p><strong>Motor</strong></p>
+                                                                                      <input id="motor" placeholder="Motor" type="text" class="form-control" name="motor" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                      <p class="help-block"></p>
+                                                                                    </div>
+                                                                                  </div>
+
+                                                                                  <div class="col-md-6 col-12">
+                                                                                      <div class="form-group validate">
+                                                                                        <p for="exampleFormControlTextarea1"><strong>Año</strong></p>
+                                                                                        <input id="year" placeholder="Año" type="text" class="form-control" name="year" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^[0-9]{4}$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
+                                                                                        <p class="help-block"></p>
+                                                                                      </div>
+                                                                                  </div>
+                                                                                  <div class="col-md-6 col-12">
+                                                                                    <div class="form-group validate">
+                                                                                      <p><strong>Color</strong></p>
+                                                                                      <input id="color" type="text" class="form-control" name="color" placeholder="Color" required data-validation-required-message='{{ __('validation.required') }}'>
+                                                                                      <p class="help-block"></p>
+                                                                                    </div>
+                                                                                  </div>
                                                                               </div>
                                                                           </div>
-                                                                      </div>
+                                                                  </div>
                                                               </div>
                                                           </div>
                                                       </div>
                                                   </div>
-                                              </div>
-                                            </section>
-
+                                                </section>
+                                              </section>
                                             </div>
                                             <!--VEHICULO EXISTENTE-->
                                             <div class="tab-pane" id="vehiculoO" aria-labelledby="vehiculoO-tab" role="tabpanel">
@@ -664,14 +667,10 @@
     });
 
     $("#clienteN-tab").click(function () {
-      document.getElementById('dpi').disabled=false;
-      document.getElementById('PrimerNombre').disabled=false;
-      document.getElementById('SegundoNombre').disabled=false;
-      document.getElementById('TercerNombre').disabled=false;
-      document.getElementById('PrimerApellido').disabled=false;
-      document.getElementById('SegundoApellido').disabled=false;
-      document.getElementById('ApellidoCasado').disabled=false;
-      document.getElementById('fecha').disabled=false;
+      var sections2 = document.getElementById('idNewCliente');
+      for(var i = 0; i < sections2.getElementsByTagName("INPUT").length; ++i) {
+        sections2.getElementsByTagName("INPUT")[i].setAttribute("value", "");
+      }
       $('#search').val('');
       $('#datos').empty();
       $('#NewOldCliente').empty();
@@ -679,14 +678,17 @@
     });
 
     $("#clienteO-tab").click(function () {
-      document.getElementById('dpi').disabled=true;
-      document.getElementById('PrimerNombre').disabled=true;
-      document.getElementById('SegundoNombre').disabled=true;
-      document.getElementById('TercerNombre').disabled=true;
-      document.getElementById('PrimerApellido').disabled=true;
-      document.getElementById('SegundoApellido').disabled=true;
-      document.getElementById('ApellidoCasado').disabled=true;
-      document.getElementById('fecha').disabled=true;
+      document.getElementById('dpi').setAttribute('value', '1234567890123');
+      document.getElementById('PrimerNombre').setAttribute('value', 'prueba');
+      document.getElementById('SegundoNombre').setAttribute('value', 'prueba');
+      document.getElementById('PrimerApellido').setAttribute('value', 'prueba');
+      document.getElementById('SegundoApellido').setAttribute('value', 'prueba');
+      document.getElementById('fecha').setAttribute('value', '1997-01-01');
+
+      //$('#verifyClienteVacio').empty();
+      //$('#verifyClienteVacio').append("<input id='req' name='req' type='text' class='form-control' required>");
+      //$('#req').hide();
+
       $('#search').val('');
       $('#datos').empty();
       $('#NewOldCliente').empty();
@@ -694,14 +696,10 @@
     });
 
     $("#vehiculoN-tab").click(function () {
-      document.getElementById('marca').disabled=false;
-      document.getElementById('modelo').disabled=false;
-      document.getElementById('tipo').disabled=false;
-      document.getElementById('year').disabled=false;
-      document.getElementById('placa').disabled=false;
-      document.getElementById('chasis').disabled=false;
-      document.getElementById('motor').disabled=false;
-      document.getElementById('color').disabled=false;
+      var sections2 = document.getElementById('idNewVehiculo');
+      for(var i = 0; i < sections2.getElementsByTagName("INPUT").length; ++i) {
+        sections2.getElementsByTagName("INPUT")[i].setAttribute("value", "");
+      }
       $('#search2').val('');
       $('#vehiculos').empty();
       $('#NewOldVehiculo').empty();
@@ -709,14 +707,13 @@
     });
 
     $("#vehiculoO-tab").click(function () {
-      document.getElementById('marca').disabled=true;
-      document.getElementById('modelo').disabled=true;
-      document.getElementById('tipo').disabled=true;
-      document.getElementById('year').disabled=true;
-      document.getElementById('placa').disabled=true;
-      document.getElementById('chasis').disabled=true;
-      document.getElementById('motor').disabled=true;
-      document.getElementById('color').disabled=true;
+      document.getElementById('marca').setAttribute('value', 'prueba');
+      document.getElementById('tipo').setAttribute('value', 'prueba');
+      document.getElementById('year').setAttribute('value', '1111');
+      document.getElementById('placa').setAttribute('value', 'P111ABC');
+      document.getElementById('chasis').setAttribute('value', 'prueba');
+      document.getElementById('motor').setAttribute('value', 'prueba');
+      document.getElementById('color').setAttribute('value', 'prueba');
       $('#search2').val('');
       $('#vehiculos').empty();
       $('#NewOldVehiculo').empty();
