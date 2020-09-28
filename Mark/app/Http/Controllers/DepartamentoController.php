@@ -101,7 +101,7 @@ class DepartamentoController extends Controller
     {
 
         $breadcrumbs = [
-            ['link' => "/home", 'name' => "Home"], ['name' => "Nuevo Departamento"]
+            ['link' => "/DashboardAnalytics", 'name' => "Home"], ['name' => "Nuevo Departamento"]
         ];
 
         $pais = pais::all();

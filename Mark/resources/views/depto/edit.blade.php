@@ -18,7 +18,7 @@
             <div class="col-md-8 col-12">
                 {!! Form::model($depto, ['route' => ['depto.update', $id], 'method' => 'put', 'novalidate', 'class' =>
                 'form-horizontal']) !!}
-                <div class="card" style="height: 419px;">
+                <div class="card" style="height: 280px;">
                     <div class="card-header">
                         <h4 class="card-title">Editar Departamento</h4>
                     </div>
@@ -54,12 +54,12 @@
                                                 <input type="text" id="depto"
                                                     class="form-control"
                                                     name="depto" placeholder="Departamento"  value="{{ $depto->departamento }}"
-                                                    required 
+                                                    required
                                                     data-validation-required-message='{{ __('validation.required') }}'
-                                                    data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" 
-                                                    data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} '   
+                                                    data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$"
+                                                    data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} '
                                                     >
-                                                    <p class="help-block"></p> 
+                                                    <p class="help-block"></p>
                                             </div>
 
 
@@ -85,11 +85,11 @@
 
 @section('vendor-script')
     <!-- vendor files -->
-    <script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script> 
+    <script src="{{ asset(mix('/vendors/js/forms/validation/jqBootstrapValidation.js')) }}"></script>
 
 @endsection
 @section('page-script')
     <!-- Page js files -->
     <script src="{{ asset(mix('js/scripts/forms/validation/form-validation.js')) }}"></script>
-   
+
 @endsection

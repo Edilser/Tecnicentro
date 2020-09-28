@@ -19,7 +19,7 @@
             {!! Form::open(['route' => 'depto.store', 'method' => 'post', 'novalidate', 'class' => 'form-horizontal'])
             !!}
 
-            <div class="card" style="height: 419px;">
+            <div class="card" style="height: 280px;">
                 <div class="card-header">
                     <h4 class="card-title">Nuevo Departamento</h4>
                 </div>
@@ -80,6 +80,7 @@
 
         </div>
     </div>
+  </div>
     @endsection
 
     @section('vendor-script')
