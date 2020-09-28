@@ -19,7 +19,7 @@
                 {!! Form::open(['route' => 'pais.store', 'method' => 'post', 'novalidate', 'class' => 'form-horizontal'])
                 !!}
 
-                <div class="card" style="height: 419px;">
+                <div class="card" style="height: 280px;">
                     <div class="card-header">
                         <h4 class="card-title">Nuevo País</h4>
                     </div>
@@ -37,14 +37,14 @@
                                                 <input type="text" id="pais"
                                                     class="form-control"
                                                     name="pais" placeholder="País"
-                                                    required 
+                                                    required
                                                     data-validation-required-message='{{ __('validation.required') }}'
-                                                    data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$" 
-                                                    data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} ' 
-                                                    value="{{ old('pais') }}"  
+                                                    data-validation-regex-regex="^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$"
+                                                    data-validation-regex-message=' {{ __('validation.LettersWhiteSpaces') }} '
+                                                    value="{{ old('pais') }}"
                                                     >
-                                                    
-                                                    <p class="help-block"></p> 
+
+                                                    <p class="help-block"></p>
                                                     @error('pais')
                                                         <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
@@ -65,7 +65,7 @@
             </div>
 
             {!! Form::close() !!}
-
+          </div>
         </div>
     </div>
 @endsection
