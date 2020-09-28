@@ -27,6 +27,26 @@
                         <input disabled id="año" class="form-control" name="año" value="{{$tipos['tipo']}}">
                       </div>
                       <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Placa</label>
+                        <input disabled id="placa" type="text" class="form-control" name="placa" value="{{$v['placa']}}">
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Chasis</label>
+                        <input disabled id="chasis" type="text" class="form-control" name="chasis" value="{{$v['chasis'] }}" >
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Motor</label>
+                        <input disabled id="motor" type="text" class="form-control" name="motor" value="{{$v['motor'] }}" >
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Color</label>
+                        <input disabled id="color" type="text" class="form-control" name="color" value="{{$v['color'] }}" >
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Año</label>
                         <input disabled id="año" class="form-control" name="año" value="{{$v['año']}}">
 

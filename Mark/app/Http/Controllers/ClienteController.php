@@ -101,7 +101,7 @@ class ClienteController extends Controller
     //   'ApellidoCasado' => 'regex:/^[\pL\s\-]+$/u|nullable',
     //   'fecha' => 'required|nullable|date',
     // ]);
-  
+
     $cl = new c();
     $cl->idEmpresa = $this->emp->id;
     $cl->dpi = $request->dpi;
@@ -127,7 +127,7 @@ class ClienteController extends Controller
         $telefonos[] = $t->attributesToArray();
       }
       telefono::insert($telefonos);
-      
+
     }
 
     $direccion = new direccion();
@@ -235,12 +235,12 @@ class ClienteController extends Controller
     telefono::insert($telefonos);
 
     $d = cd::where('idcliente', '=', $v->id)->get();
-    
+    if ($d->count() > 0) {
     $dir = direccion::where('id', '=', $d[0]->iddireccion);
 
     $d[0]->delete();
     $dir->delete();
-
+    }
     $direccion = new direccion();
     $direccion->idEmpresa = $this->emp->id;;
     $direccion->calleave = $request->calleave;

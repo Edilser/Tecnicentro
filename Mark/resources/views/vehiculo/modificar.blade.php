@@ -44,6 +44,26 @@
                         </select>
                       </div>
                       <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Placa</label>
+                        <input id="placa" type="text" class="form-control" name="placa" value="{{$v['placa']}}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^([A,C,CC,CD,M,MI,O,P,TC,U]{1,2})(\d{3})([A-Z]{3})+$" data-validation-regex-message=' {{ __('validation.PlacaMessage') }} '>
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Chasis</label>
+                        <input id="chasis" type="text" class="form-control" name="chasis" value="{{$v['chasis'] }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Motor</label>
+                        <input id="motor" type="text" class="form-control" name="motor" value="{{$v['motor'] }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Color</label>
+                        <input id="color" type="text" class="form-control" name="color" value="{{$v['color'] }}" required data-validation-required-message='{{ __('validation.required') }}'>
+                        <p class="help-block"></p>
+                      </div>
+                      <div class="form-group">
                         <label for="exampleFormControlTextarea1">Año</label>
                         <input id="year" type="number" class="form-control" name="year" value="{{$v['año']}}" required data-validation-required-message='{{ __('validation.required') }}' data-validation-regex-regex="^(19[6-8][0-9]|199[0-9]|20[01][0-9]|202[0-2])$" data-validation-regex-message=' {{ __('validation.YearMessage') }} '>
                         <p class="help-block"></p>

@@ -128,7 +128,7 @@
                                         </div>
                                     </div>
 
-                                    
+
                                     <div class="col-md-6 col-12">
                                         <div class="form-label-group">
                                             <div class="table-responsive">
@@ -138,6 +138,7 @@
                                                         <tr class="">
                                                             <th scope="col">Telefonos</th>
                                                             <th scope="col"></th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>

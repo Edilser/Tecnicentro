@@ -120,6 +120,7 @@
                                                         <tr class="">
                                                             <th scope="col">Telefonos</th>
                                                             <th scope="col"></th>
+                                                            <th></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
