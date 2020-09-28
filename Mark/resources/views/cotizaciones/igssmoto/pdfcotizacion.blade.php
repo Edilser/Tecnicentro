@@ -21,7 +21,7 @@
       <div class="col-12 col-md-7 d-flex flex-column flex-md-row justify-content-end">
         <a href="{{url('/cotizacion-vehiculo')}}" class="btn btn-outline-danger  mr-1 ml-md-1"> <i class="feather icon-arrow-left"></i>Regresar</a>
         <button class="btn btn-primary btn-print mb-1 mb-md-0"> <i class="feather icon-file-text"></i> Imprimir</button>
-        <button class="btn btn-outline-primary  ml-0 ml-md-1"> <i class="feather icon-download"></i> Descargar</button>
+        <!--<button class="btn btn-outline-primary  ml-0 ml-md-1"> <i class="feather icon-download"></i> Descargar</button>-->
       </div>
     </div>
   </section>
