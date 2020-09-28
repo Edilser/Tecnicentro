@@ -42,7 +42,7 @@ class MarcaController extends Controller
     public function index()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['name'=>"marcas"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"marcas"]];
 
         $marca=marca::paginate(20);
         return view('/marca/index', compact('marca'), ['breadcrumbs' => $breadcrumbs]);
@@ -56,7 +56,7 @@ class MarcaController extends Controller
     public function create()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"], ['link' => "/marca", 'name' => "Marcas"], ['name'=>"Nueva Marca"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"], ['link' => "/marca", 'name' => "Marcas"], ['name'=>"Nueva Marca"]];
         return \view('/marca/create', ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -99,7 +99,7 @@ class MarcaController extends Controller
     public function edit($id)
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/marca", 'name'=>"Marcas"], ['name' => "Modificar Marca"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/marca", 'name'=>"Marcas"], ['name' => "Modificar Marca"]];
         $v = marca::find($id);
         return \view('/marca/modificar', compact('v','id'), ['breadcrumbs' => $breadcrumbs]);
     }
@@ -136,7 +136,7 @@ class MarcaController extends Controller
     }
     public function delete($id) {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/marca", 'name'=>"Marcas"], ['name' => "Eliminar Marca"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/marca", 'name'=>"Marcas"], ['name' => "Eliminar Marca"]];
         $v = marca::find($id);
         return \view('/marca/eliminar', compact('v','id'),['breadcrumbs' => $breadcrumbs]);
     }

@@ -15,7 +15,7 @@
             paraphonic unassessable foramination Caulopteris worral Spirophyton encrimson esparcet aggerate chondrule
             restate whistler shallopy biosystematy area bertram plotting unstarting quarterstaff.
           </p>
-          <a class="btn btn-primary btn-lg mt-1" href="dashboard-analytics">Back to Home</a>
+          <a class="btn btn-primary btn-lg mt-1" href="DashboardAnalytics">Back to Home</a>
         </div>
       </div>
     </div>

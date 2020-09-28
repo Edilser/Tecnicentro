@@ -39,7 +39,7 @@ class TipoVehiculoController extends Controller
     public function index()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['name'=>"Tipos de vehículos"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"Tipos de vehículos"]];
 
         $tipo=tipo::paginate(20);
         return view('/tipo/index', compact('tipo'), ['breadcrumbs' => $breadcrumbs]);
@@ -53,7 +53,7 @@ class TipoVehiculoController extends Controller
     public function create()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"], ['link' => "/tipoVehiculo", 'name' => "Tipos de vehículos"], ['name'=>"Nuevo Tipo vehículo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"], ['link' => "/tipoVehiculo", 'name' => "Tipos de vehículos"], ['name'=>"Nuevo Tipo vehículo"]];
         return \view('/tipo/create', ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -95,7 +95,7 @@ class TipoVehiculoController extends Controller
     public function edit($id)
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/tipoVehiculo", 'name'=>"Tipos de vehículos"], ['name' => "Modificar Tipo Vehículo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/tipoVehiculo", 'name'=>"Tipos de vehículos"], ['name' => "Modificar Tipo Vehículo"]];
         $v = tipo::find($id);
         return \view('/tipo/modificar', compact('v','id'), ['breadcrumbs' => $breadcrumbs]);
     }
@@ -132,7 +132,7 @@ class TipoVehiculoController extends Controller
     }
     public function delete($id) {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/tipoVehiculo", 'name'=>"Tipos de vehículos"], ['name' => "Eliminar Tipo Vehículo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/tipoVehiculo", 'name'=>"Tipos de vehículos"], ['name' => "Eliminar Tipo Vehículo"]];
         $v = tipo::find($id);
         return \view('/tipo/eliminar', compact('v','id'),['breadcrumbs' => $breadcrumbs]);
     }

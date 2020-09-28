@@ -2,7 +2,7 @@
 <nav class="header-navbar navbar-expand-lg navbar navbar-with-menu {{ $configData['navbarColor'] }} navbar-fixed">
   <div class="navbar-header d-xl-block d-none">
     <ul class="nav navbar-nav flex-row">
-      <li class="nav-item"><a class="navbar-brand" href="dashboard-analytics">
+      <li class="nav-item"><a class="navbar-brand" href="DashboardAnalytics">
           <div class="brand-logo"></div>
         </a></li>
     </ul>
@@ -158,11 +158,12 @@
                     width="40" /> --}}
                   </span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile"><i
+              <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="page-user-profile">
+              <!-- <i
                     class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="app-email"><i
                     class="feather icon-mail"></i> My
                   Inbox</a><a class="dropdown-item" href="app-todo"><i class="feather icon-check-square"></i> Task</a><a
-                  class="dropdown-item" href="app-chat"><i class="feather icon-message-square"></i> Chats</a>
+                  class="dropdown-item" href="app-chat"><i class="feather icon-message-square"></i> Chats</a> -->
                 <div class="dropdown-divider"></div><a class="dropdown-item" href="auth-login"><i
                     class="feather icon-power"></i> Logout</a>
                 <form id="logout-form" action="login" method="POST" style="display: none;">

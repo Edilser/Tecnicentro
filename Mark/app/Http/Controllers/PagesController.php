@@ -13,7 +13,7 @@ class PagesController extends Controller
       ];
 
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Profile"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Profile"]
       ];
 
       return view('/pages/page-user-profile', [
@@ -24,7 +24,7 @@ class PagesController extends Controller
     // FAQ
     public function faq(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"FAQ"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"FAQ"]
       ];
       return view('/pages/page-faq', [
           'breadcrumbs' => $breadcrumbs
@@ -34,7 +34,7 @@ class PagesController extends Controller
     // Knowledge Base
     public function knowledge_base(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Knowledge Base"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Knowledge Base"]
       ];
       return view('/pages/page-knowledge-base', [
           'breadcrumbs' => $breadcrumbs
@@ -44,7 +44,7 @@ class PagesController extends Controller
     // Knowledge Base Category
     public function kb_category(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['link'=>"/page-knowledge-base",'name'=>"Knowledge Base"], ['name'=>"Category"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['link'=>"/page-knowledge-base",'name'=>"Knowledge Base"], ['name'=>"Category"]
       ];
       return view('/pages/page-kb-category', [
           'breadcrumbs' => $breadcrumbs
@@ -54,7 +54,7 @@ class PagesController extends Controller
     // Knowledge Base Question
     public function kb_question(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['link'=>"/page-knowledge-base",'name'=>"Knowledge Base"], ['link'=>"/page-kb-category",'name'=>"Category"], ['name'=>"Question"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['link'=>"/page-knowledge-base",'name'=>"Knowledge Base"], ['link'=>"/page-kb-category",'name'=>"Category"], ['name'=>"Question"]
       ];
       return view('/pages/page-kb-question', [
           'breadcrumbs' => $breadcrumbs
@@ -64,7 +64,7 @@ class PagesController extends Controller
     // Search
     public function search(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Search"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Search"]
       ];
       return view('/pages/page-search', [
           'breadcrumbs' => $breadcrumbs
@@ -74,7 +74,7 @@ class PagesController extends Controller
     // Invoice
     public function invoice(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Invoice"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Invoice"]
       ];
       return view('/pages/page-invoice', [
           'breadcrumbs' => $breadcrumbs
@@ -84,7 +84,7 @@ class PagesController extends Controller
     // Account Settings
     public function account_settings(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Account Settings"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Account Settings"]
       ];
       return view('/pages/page-account-settings', [
           'breadcrumbs' => $breadcrumbs
@@ -92,7 +92,7 @@ class PagesController extends Controller
     }
     public function pricing(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Pages"], ['name'=>"Pricing"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Pages"], ['name'=>"Pricing"]
       ];
       return view('/pages/pricing', [
           'breadcrumbs' => $breadcrumbs

@@ -19,7 +19,7 @@ class DataListController extends Controller
         $objs = json_decode($json,true);
 
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Data List"], ['name'=>"List View"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Data List"], ['name'=>"List View"]
         ];
 
         return view('/pages/data-list-view', [

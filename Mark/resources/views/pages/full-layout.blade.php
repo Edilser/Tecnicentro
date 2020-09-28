@@ -61,7 +61,7 @@
                                             </fieldset>
                                         </div>
                                     </div>
-                                    <a href="dashboard-analytics" class="btn btn-outline-primary float-left btn-inline mb-50">Back</a>
+                                    <a href="DashboardAnalytics" class="btn btn-outline-primary float-left btn-inline mb-50">Back</a>
                                     <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>
                                 </form>
                             </div>

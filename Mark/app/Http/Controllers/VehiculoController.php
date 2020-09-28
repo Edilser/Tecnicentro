@@ -37,7 +37,7 @@ class VehiculoController extends Controller
     public function index()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['name'=>"vehículos"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"vehículos"]];
 
         //$vehiculo=vehiculo::paginate(20);
 
@@ -162,7 +162,7 @@ class VehiculoController extends Controller
     public function edit($id)
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/vehiculo", 'name'=>"Vehículos"], ['name' => "Modificar Vehículo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/vehiculo", 'name'=>"Vehículos"], ['name' => "Modificar Vehículo"]];
         $v = vehiculo::find($id);
         $first_modelo = modelo::find($v['idModelo']);
         $first_marca = marca::find($v['idMarca']);
@@ -207,7 +207,7 @@ class VehiculoController extends Controller
 
     public function delete($id) {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/vehiculo", 'name'=>"Vehículos"], ['name' => "Eliminar Vehículo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/vehiculo", 'name'=>"Vehículos"], ['name' => "Eliminar Vehículo"]];
 
         $v = vehiculo::find($id);
         $marcas = marca::find($v->idMarca);

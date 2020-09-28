@@ -12,14 +12,14 @@
 @endsection
 @section('page-style')
         <!-- Page css files -->
-        <link rel="stylesheet" href="{{ asset(mix('css/pages/dashboard-analytics.css')) }}">
+        <link rel="stylesheet" href="{{ asset(mix('css/pages/DashboardAnalytics.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/pages/card-analytics.css')) }}">
         <link rel="stylesheet" href="{{ asset(mix('css/plugins/tour/tour.css')) }}">
   @endsection
 
   @section('content')
     {{-- Dashboard Analytics Start
-    <section id="dashboard-analytics">
+    <section id="DashboardAnalytics">
       <div class="row">
           <div class="col-lg-6 col-md-12 col-sm-12">
           <div class="card bg-analytics text-white">
@@ -481,5 +481,5 @@
 @endsection
 @section('page-script')
         <!-- Page js files -->
-        <script src="{{ asset(mix('js/scripts/pages/dashboard-analytics.js')) }}"></script>
+        <script src="{{ asset(mix('js/scripts/pages/DashboardAnalytics.js')) }}"></script>
 @endsection

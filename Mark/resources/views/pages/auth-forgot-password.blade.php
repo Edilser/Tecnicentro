@@ -24,7 +24,7 @@
                       <p class="px-2 mb-0">Please enter your email address and we'll send you instructions on how to reset your password.</p>
                       <div class="card-content">
                           <div class="card-body">
-                              <form action="dashboard-analytics">
+                              <form action="DashboardAnalytics">
                                   <div class="form-label-group">
                                       <input type="email" id="inputEmail" class="form-control" placeholder="Email">
                                       <label for="inputEmail">Email</label>

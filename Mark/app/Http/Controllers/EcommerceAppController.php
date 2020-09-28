@@ -14,7 +14,7 @@ class EcommerceAppController extends Controller
       ];
 
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"eCommerce"], ['name'=>"Shop"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"eCommerce"], ['name'=>"Shop"]
       ];
 
       return view('/pages/app-ecommerce-shop', [
@@ -30,7 +30,7 @@ class EcommerceAppController extends Controller
         ];
   
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"eCommerce"], ['name'=>"Product Details"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"eCommerce"], ['name'=>"Product Details"]
         ];
   
         return view('/pages/app-ecommerce-details', [
@@ -46,7 +46,7 @@ class EcommerceAppController extends Controller
         ];
 
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"eCommerce"], ['name'=>"Wish List"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"eCommerce"], ['name'=>"Wish List"]
         ];
   
         return view('/pages/app-ecommerce-wishlist', [
@@ -62,7 +62,7 @@ class EcommerceAppController extends Controller
         ];
 
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"eCommerce"], ['name'=>"Checkout"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"eCommerce"], ['name'=>"Checkout"]
         ];
   
         return view('/pages/app-ecommerce-checkout', [

@@ -24,7 +24,7 @@
                       <p class="px-2">Fill the below form to create a new account.</p>
                       <div class="card-content">
                           <div class="card-body pt-0">
-                              <form action="dashboard-analytics">
+                              <form action="DashboardAnalytics">
                                   <div class="form-label-group">
                                       <input type="text" id="inputName" class="form-control" placeholder="Name" required>
                                       <label for="inputName">Name</label>

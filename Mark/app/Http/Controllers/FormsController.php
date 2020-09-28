@@ -9,7 +9,7 @@ class FormsController extends Controller
     // Form Elements - Select
     public function select(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Select"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Select"]
       ];
       return view('/pages/form-select', [
           'breadcrumbs' => $breadcrumbs
@@ -19,7 +19,7 @@ class FormsController extends Controller
     // Form Elements - Switch
     public function switch(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Switch"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Switch"]
       ];
       return view('/pages/form-switch', [
           'breadcrumbs' => $breadcrumbs
@@ -29,7 +29,7 @@ class FormsController extends Controller
     // Form Elements - Checkbox
     public function checkbox(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Checkbox"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Checkbox"]
       ];
       return view('/pages/form-checkbox', [
           'breadcrumbs' => $breadcrumbs
@@ -39,7 +39,7 @@ class FormsController extends Controller
     // Form Elements - Radio
     public function radio(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Radio"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Radio"]
       ];
       return view('/pages/form-radio', [
           'breadcrumbs' => $breadcrumbs
@@ -49,7 +49,7 @@ class FormsController extends Controller
     // Form Elements - Input
     public function input(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Input"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Input"]
       ];
       return view('/pages/form-input', [
           'breadcrumbs' => $breadcrumbs
@@ -59,7 +59,7 @@ class FormsController extends Controller
     // Form Elements - Input-groups
     public function input_groups(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Input Groups"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Input Groups"]
       ];
       return view('/pages/form-input-groups', [
           'breadcrumbs' => $breadcrumbs
@@ -69,7 +69,7 @@ class FormsController extends Controller
     // Form Elements - Number Input
     public function number_input(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Number Input"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Number Input"]
       ];
       return view('/pages/form-number-input', [
           'breadcrumbs' => $breadcrumbs
@@ -79,7 +79,7 @@ class FormsController extends Controller
     // Form Elements - Textarea
     public function textarea(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Textarea"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Textarea"]
       ];
       return view('/pages/form-textarea', [
           'breadcrumbs' => $breadcrumbs
@@ -89,7 +89,7 @@ class FormsController extends Controller
     // Form Elements - Date & time Picker
     public function date_time_picker(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Form Elements"], ['name'=>"Date & Time Picker"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Form Elements"], ['name'=>"Date & Time Picker"]
       ];
       return view('/pages/form-date-time-picker', [
           'breadcrumbs' => $breadcrumbs
@@ -99,7 +99,7 @@ class FormsController extends Controller
     // Form Layouts
     public function layouts(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Forms"], ['name'=>"Form Layouts"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Forms"], ['name'=>"Form Layouts"]
       ];
       return view('/pages/form-layout', [
           'breadcrumbs' => $breadcrumbs
@@ -109,7 +109,7 @@ class FormsController extends Controller
     // Form Wizard
     public function wizard(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Forms"], ['name'=>"Wizard"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Forms"], ['name'=>"Wizard"]
       ];
       return view('/pages/form-wizard', [
           'breadcrumbs' => $breadcrumbs
@@ -119,7 +119,7 @@ class FormsController extends Controller
     // Form Validation
     public function validation(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"], ['link'=>"dashboard-analytics",'name'=>"Forms"], ['name'=>"Validation"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"], ['link'=>"DashboardAnalytics",'name'=>"Forms"], ['name'=>"Validation"]
       ];
       return view('/pages/form-validation', [
           'breadcrumbs' => $breadcrumbs

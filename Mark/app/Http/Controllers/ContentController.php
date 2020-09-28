@@ -9,7 +9,7 @@ class ContentController extends Controller
     // Content Grid
     public function grid(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Content"], ['name'=>"Grid"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Content"], ['name'=>"Grid"]
       ];
       return view('/pages/content-grid', [
           'breadcrumbs' => $breadcrumbs
@@ -19,7 +19,7 @@ class ContentController extends Controller
     // Content Typography
     public function typography(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Content"], ['name'=>"Typography"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Content"], ['name'=>"Typography"]
       ];
       return view('/pages/content-typography', [
           'breadcrumbs' => $breadcrumbs
@@ -29,7 +29,7 @@ class ContentController extends Controller
     // Content Text Utilities
     public function text_utilities(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Content"], ['name'=>"Text Utilities"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Content"], ['name'=>"Text Utilities"]
       ];
       return view('/pages/content-text-utilities', [
           'breadcrumbs' => $breadcrumbs
@@ -39,7 +39,7 @@ class ContentController extends Controller
     // Content Syntax Highlighter
     public function syntax_highlighter(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Content"], ['name'=>"Syntax Highlighter"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Content"], ['name'=>"Syntax Highlighter"]
       ];
       return view('/pages/content-syntax-highlighter', [
           'breadcrumbs' => $breadcrumbs
@@ -49,7 +49,7 @@ class ContentController extends Controller
     // Content Helper Classes
     public function helper_classes(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Content"], ['name'=>"Helper Classes"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Content"], ['name'=>"Helper Classes"]
       ];
       return view('/pages/content-helper-classes', [
           'breadcrumbs' => $breadcrumbs
@@ -59,7 +59,7 @@ class ContentController extends Controller
     // UI Elements - Colors
     public function colors(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['name'=>"Colors"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['name'=>"Colors"]
       ];
       return view('/pages/colors', [
           'breadcrumbs' => $breadcrumbs

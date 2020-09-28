@@ -20,7 +20,7 @@ class DataThumbController extends Controller
 
         // Breadcrumb
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Data List"], ['name'=>"Thumb View"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Data List"], ['name'=>"Thumb View"]
         ];
 
         return view('/pages/data-thumb-view', [

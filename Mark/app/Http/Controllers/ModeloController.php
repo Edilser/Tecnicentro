@@ -43,7 +43,7 @@ class ModeloController extends Controller
     public function index()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['name'=>"modelos"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"modelos"]];
 
         $modelo=modelo::with('marca')->paginate(20);
         return view('/modelo/index', compact('modelo'), ['breadcrumbs' => $breadcrumbs]);
@@ -59,7 +59,7 @@ class ModeloController extends Controller
       $marcas = marca::all();
 
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"], ['link' => "/modelo", 'name' => "Modelos"], ['name'=>"Nuevo Modelo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"], ['link' => "/modelo", 'name' => "Modelos"], ['name'=>"Nuevo Modelo"]];
         return \view('/modelo/create', compact('marcas'), ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -108,7 +108,7 @@ class ModeloController extends Controller
     public function edit($id)
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/modelo", 'name'=>"Modelos"], ['name' => "Modificar modelo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/modelo", 'name'=>"Modelos"], ['name' => "Modificar modelo"]];
         $v = modelo::find($id);
         $marcas = marca::find($v['idMarca']);
         return \view('/modelo/modificar', compact('v','id', 'marcas'), ['breadcrumbs' => $breadcrumbs]);
@@ -148,7 +148,7 @@ class ModeloController extends Controller
     }
     public function delete($id) {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/modelo", 'name'=>"Modelos"], ['name' => "Eliminar Modelo"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/modelo", 'name'=>"Modelos"], ['name' => "Eliminar Modelo"]];
         $v = modelo::find($id);
         $marca = marca::find($v['idMarca']);
         return \view('/modelo/eliminar', compact('v','id', 'marca'),['breadcrumbs' => $breadcrumbs]);

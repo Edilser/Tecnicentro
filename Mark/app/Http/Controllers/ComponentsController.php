@@ -9,7 +9,7 @@ class ComponentsController extends Controller
     // Component Alert
     public function alert(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Alerts"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Alerts"]
         ];
         return view('/pages/component-alert', [
             'breadcrumbs' => $breadcrumbs
@@ -19,7 +19,7 @@ class ComponentsController extends Controller
     // Component Buttons
     public function buttons(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Buttons"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Buttons"]
         ];
         return view('/pages/component-buttons', [
             'breadcrumbs' => $breadcrumbs
@@ -29,7 +29,7 @@ class ComponentsController extends Controller
     // Component Breadcrumbs
     public function breadcrumbs(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Breadcrumbs"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Breadcrumbs"]
         ];
         return view('/pages/component-breadcrumbs', [
             'breadcrumbs' => $breadcrumbs
@@ -39,7 +39,7 @@ class ComponentsController extends Controller
     // Component Carousel
     public function carousel(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Carousel"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Carousel"]
         ];
         return view('/pages/component-carousel', [
             'breadcrumbs' => $breadcrumbs
@@ -49,7 +49,7 @@ class ComponentsController extends Controller
     // Component Collapse
     public function collapse(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Collapse"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Collapse"]
         ];
         return view('/pages/component-collapse', [
             'breadcrumbs' => $breadcrumbs
@@ -59,7 +59,7 @@ class ComponentsController extends Controller
     // Component Dropdowns
     public function dropdowns(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Dropdowns"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Dropdowns"]
         ];
         return view('/pages/component-dropdowns', [
             'breadcrumbs' => $breadcrumbs
@@ -69,7 +69,7 @@ class ComponentsController extends Controller
     // Component List Group
     public function list_group(){
         $breadcrumbs = [
-            ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"List Group"]
+            ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"List Group"]
         ];
         return view('/pages/component-list-group', [
             'breadcrumbs' => $breadcrumbs
@@ -79,7 +79,7 @@ class ComponentsController extends Controller
     // Component Modals
     public function modals(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Modal"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Modal"]
       ];
       return view('/pages/component-modals', [
           'breadcrumbs' => $breadcrumbs
@@ -89,7 +89,7 @@ class ComponentsController extends Controller
     // Component Pagination
     public function pagination(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Pagination"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Pagination"]
       ];
       return view('/pages/component-pagination', [
           'breadcrumbs' => $breadcrumbs
@@ -99,7 +99,7 @@ class ComponentsController extends Controller
     // Component Navs
     public function navs(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Navs"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Navs"]
       ];
       return view('/pages/component-navs', [
           'breadcrumbs' => $breadcrumbs
@@ -109,7 +109,7 @@ class ComponentsController extends Controller
     // Component Navbar
     public function navbar(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Navbar"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Navbar"]
       ];
       return view('/pages/component-navbar', [
           'breadcrumbs' => $breadcrumbs
@@ -119,7 +119,7 @@ class ComponentsController extends Controller
     // Component Tabs
     public function tabs(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Tabs"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Tabs"]
       ];
       return view('/pages/component-tabs', [
           'breadcrumbs' => $breadcrumbs
@@ -129,7 +129,7 @@ class ComponentsController extends Controller
     // Component Pills
     public function pills(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Pills"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Pills"]
       ];
       return view('/pages/component-pills', [
           'breadcrumbs' => $breadcrumbs
@@ -139,7 +139,7 @@ class ComponentsController extends Controller
     // Component Tooltips
     public function tooltips(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Tooltips"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Tooltips"]
       ];
       return view('/pages/component-tooltips', [
           'breadcrumbs' => $breadcrumbs
@@ -149,7 +149,7 @@ class ComponentsController extends Controller
     // Component Popovers
     public function popovers(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Popovers"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Popovers"]
       ];
       return view('/pages/component-popovers', [
           'breadcrumbs' => $breadcrumbs
@@ -159,7 +159,7 @@ class ComponentsController extends Controller
     // Component Badges
     public function badges(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Badges"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Badges"]
       ];
       return view('/pages/component-badges', [
           'breadcrumbs' => $breadcrumbs
@@ -169,7 +169,7 @@ class ComponentsController extends Controller
     // Component Pill Badges
     public function pill_badges(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Pill Badges"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Pill Badges"]
       ];
       return view('/pages/component-pill-badges', [
           'breadcrumbs' => $breadcrumbs
@@ -179,7 +179,7 @@ class ComponentsController extends Controller
     // Component Progress
     public function progress(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Progress"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Progress"]
       ];
       return view('/pages/component-progress', [
           'breadcrumbs' => $breadcrumbs
@@ -189,7 +189,7 @@ class ComponentsController extends Controller
     // Component Media Objects
     public function media_objects(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Media Objects"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Media Objects"]
       ];
       return view('/pages/component-media-objects', [
           'breadcrumbs' => $breadcrumbs
@@ -199,7 +199,7 @@ class ComponentsController extends Controller
     // Component Spinner
     public function spinner(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Spinner"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Spinner"]
       ];
       return view('/pages/component-spinner', [
           'breadcrumbs' => $breadcrumbs
@@ -209,7 +209,7 @@ class ComponentsController extends Controller
     // Component Toast
     public function toast(){
       $breadcrumbs = [
-          ['link'=>"dashboard-analytics",'name'=>"Home"],['link'=>"dashboard-analytics",'name'=>"Components"], ['name'=>"Toast"]
+          ['link'=>"DashboardAnalytics",'name'=>"Home"],['link'=>"DashboardAnalytics",'name'=>"Components"], ['name'=>"Toast"]
       ];
       return view('/pages/component-toast', [
           'breadcrumbs' => $breadcrumbs

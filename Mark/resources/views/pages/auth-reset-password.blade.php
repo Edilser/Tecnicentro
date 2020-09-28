@@ -24,7 +24,7 @@
                       <p class="px-2">Please enter your new password.</p>
                       <div class="card-content">
                           <div class="card-body pt-1">
-                              <form action="dashboard-analytics">
+                              <form action="DashboardAnalytics">
                                   <fieldset class="form-label-group">
                                       <input type="text" class="form-control" id="user-email" placeholder="Email" required>
                                       <label for="user-email">Email</label>

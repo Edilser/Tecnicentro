@@ -15,7 +15,7 @@ class EmpresaController extends Controller
     public function index()
     {
       $breadcrumbs = [
-      ['link'=>"/home",'name'=>"Home"],['name'=>"empresas"]];
+      ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"empresas"]];
 
       $empresa=empresa::paginate(20);
       return view('/empresa/index', compact('empresa'), ['breadcrumbs' => $breadcrumbs]);
@@ -29,7 +29,7 @@ class EmpresaController extends Controller
     public function create()
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"], ['link' => "/empresa", 'name' => "Empresas"], ['name'=>"Nueva Empresa"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"], ['link' => "/empresa", 'name' => "Empresas"], ['name'=>"Nueva Empresa"]];
         return \view('/empresa/create', ['breadcrumbs' => $breadcrumbs]);
     }
 
@@ -73,7 +73,7 @@ class EmpresaController extends Controller
     public function edit($id)
     {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/empresa", 'name'=>"Empresas"], ['name' => "Modificar Empresa"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/empresa", 'name'=>"Empresas"], ['name' => "Modificar Empresa"]];
         $v = empresa::find($id);
         return \view('/empresa/modificar', compact('v','id'), ['breadcrumbs' => $breadcrumbs]);
     }
@@ -114,7 +114,7 @@ class EmpresaController extends Controller
 
     public function delete($id) {
       $breadcrumbs = [
-        ['link'=>"/home",'name'=>"Home"],['link'=>"/empresa", 'name'=>"Empresas"], ['name' => "Eliminar Empresa"]];
+        ['link'=>"/DashboardAnalytics",'name'=>"Home"],['link'=>"/empresa", 'name'=>"Empresas"], ['name' => "Eliminar Empresa"]];
         $v = empresa::find($id);
         return \view('/empresa/eliminar', compact('v','id'),['breadcrumbs' => $breadcrumbs]);
     }

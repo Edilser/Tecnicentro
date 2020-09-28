@@ -1,5 +1,5 @@
 /*=========================================================================================
-    File Name: dashboard-analytics.js
+    File Name: DashboardAnalytics.js
     Description: dashboard analytics page content with Apexchart Examples
     ----------------------------------------------------------------------------------------
     Item name: Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template

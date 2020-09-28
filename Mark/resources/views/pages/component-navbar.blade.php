@@ -140,12 +140,12 @@
                                 src="{{ asset('images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40"
                                 width="40"></span>
                           </a>
-                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
-                                class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i
-                                class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i
-                                class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="#"><i
-                                class="feather icon-message-square"></i> Chats</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">
+                          <!-- <i class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="#">
+                          <i class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="#">
+                          <i class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="#">
+                          <i class="feather icon-message-square"></i> Chats</a> -->
+                          <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
                                 class="feather icon-power"></i> Logout</a>
                           </div>
                         </li>
@@ -301,11 +301,12 @@
                                 src="{{ asset('images/portrait/small/avatar-s-11.jpg') }}" alt="avatar" height="40"
                                 width="40"></span>
                           </a>
-                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#"><i
+                          <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">
+                          <!-- <i
                                 class="feather icon-user"></i> Edit Profile</a><a class="dropdown-item" href="#"><i
                                 class="feather icon-mail"></i> My Inbox</a><a class="dropdown-item" href="#"><i
                                 class="feather icon-check-square"></i> Task</a><a class="dropdown-item" href="#"><i
-                                class="feather icon-message-square"></i> Chats</a>
+                                class="feather icon-message-square"></i> Chats</a> -->
                             <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i
                                 class="feather icon-power"></i> Logout</a>
                           </div>

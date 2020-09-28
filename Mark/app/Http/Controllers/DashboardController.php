@@ -10,7 +10,7 @@ use App\Empresa;
 class DashboardController extends Controller
 {
     // Dashboard - Analytics
-    public function dashboardAnalytics(){
+    public function DashboardAnalytics(){
 
         $emp = Empresa::first();
         
@@ -25,7 +25,7 @@ class DashboardController extends Controller
             'pageHeader' => false
         ];
 
-        return view('/pages/dashboard-analytics', [
+        return view('/pages/DashboardAnalytics', [
             'pageConfigs' => $pageConfigs
         ]);
     }

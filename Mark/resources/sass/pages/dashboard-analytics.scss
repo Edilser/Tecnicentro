@@ -10,8 +10,8 @@
 // Overrides user variable
 @import "../core/variables/components-variables";
 
-// dashboard-analytics
-#dashboard-analytics{
+// DashboardAnalytics
+#DashboardAnalytics{
   // img left
   .img-left{
     width: 200px;
@@ -50,7 +50,7 @@
 }
 
 @media only screen and (max-width: 576px){
-  #dashboard-analytics{
+  #DashboardAnalytics{
       // img left, img-right
       .img-left, .img-right{
         width: 140px;

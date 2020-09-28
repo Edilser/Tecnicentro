@@ -44,7 +44,7 @@ class MunicipioController extends Controller
     public function delete($id)
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Eliminar Municipio"]];
+            ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"Eliminar Municipio"]];
 
         $mun = Municipio::with('pais')->with('depto')->find($id);
         
@@ -77,7 +77,7 @@ class MunicipioController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Municipios"]];
+            ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"Municipios"]];
     
         $mun = Municipio::with('pais')->with('depto')->paginate(10);
         
@@ -92,7 +92,7 @@ class MunicipioController extends Controller
     public function create()
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Nuevo Municipio"]];
+            ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"Nuevo Municipio"]];
     
         $pais = pais::all();
         
@@ -148,7 +148,7 @@ class MunicipioController extends Controller
     public function edit($id)
     {
         $breadcrumbs = [
-            ['link'=>"/home",'name'=>"Home"],['name'=>"Editar Municipio"]];
+            ['link'=>"/DashboardAnalytics",'name'=>"Home"],['name'=>"Editar Municipio"]];
 
         $mun = Municipio::find($id);
         $pais = pais::with('departamento')->get();

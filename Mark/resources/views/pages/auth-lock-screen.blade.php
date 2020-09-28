@@ -23,7 +23,7 @@
                       </div>
                       <div class="card-content">
                           <div class="card-body pt-1">
-                              <form action="dashboard-analytics">
+                              <form action="DashboardAnalytics">
                                   <fieldset class="form-label-group position-relative has-icon-left">
                                       <input type="text" class="form-control" id="user-name" placeholder="Username" required>
                                       <div class="form-control-position">

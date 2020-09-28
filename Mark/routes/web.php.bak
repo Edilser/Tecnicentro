@@ -13,18 +13,18 @@ use App\Http\Controllers\LanguageController;
 
 
 // Route url
-Route::get('/dashboardAnalytics', 'DashboardController@dashboardAnalytics');
+Route::get('/DashboardAnalytics', 'DashboardController@DashboardAnalytics');
 
 Route::get('/', function () {
     if(Auth::check()) {
-      return redirect('/dashboardAnalytics');
+      return redirect('/DashboardAnalytics');
     } else {
         return view('auth.login');
     }
   });
 
 // // Route Dashboards
-// Route::get('/dashboard-analytics', 'DashboardController@dashboardAnalytics');
+// Route::get('/DashboardAnalytics', 'DashboardController@DashboardAnalytics');
 // Route::get('/dashboard-ecommerce', 'DashboardController@dashboardEcommerce');
 
 
