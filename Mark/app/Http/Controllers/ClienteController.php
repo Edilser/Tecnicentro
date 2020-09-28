@@ -57,7 +57,7 @@ class ClienteController extends Controller
   public function index()
   {
     $breadcrumbs = [
-      ['link' => "/", 'name' => "Home"], ['name' => "clientes"]
+      ['link' => "DashboardAnalytics", 'name' => "Home"], ['name' => "clientes"]
     ];
 
     $cliente = c::paginate(20);
@@ -72,7 +72,7 @@ class ClienteController extends Controller
   public function create()
   {
     $breadcrumbs = [
-      ['link' => "/", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Nuevo Cliente"]
+      ['link' => "DashboardAnalytics", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Nuevo Cliente"]
     ];
 
     $pais = Pais::all();
@@ -175,7 +175,7 @@ class ClienteController extends Controller
   public function edit($id)
   {
     $breadcrumbs = [
-      ['link' => "/", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Modificar Cliente"]
+      ['link' => "DashboardAnalytics", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Modificar Cliente"]
     ];
 
     $v = c::with('telefono')->with('direccion')->find($id);
@@ -289,7 +289,7 @@ class ClienteController extends Controller
   public function delete($id)
   {
     $breadcrumbs = [
-      ['link' => "/", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Eliminar Cliente"]
+      ['link' => "DashboardAnalytics", 'name' => "Home"], ['link' => "/cliente", 'name' => "Clientes"], ['name' => "Eliminar Cliente"]
     ];
     $v = c::with('telefono')->find($id);
     return \view('/cliente/del', compact('v', 'id'), ['breadcrumbs' => $breadcrumbs]);

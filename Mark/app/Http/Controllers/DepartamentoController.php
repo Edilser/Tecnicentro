@@ -70,7 +70,7 @@ class DepartamentoController extends Controller
         $depto = departamento::with('pais')->find($id);
 
         $breadcrumbs = [
-            ['link' => "/", 'name' => "Home"], ['link' => "/depto", 'name' => "Departamento"], ['name' => "Eliminar"]
+            ['link' => "DashboardAnalytics", 'name' => "Home"], ['link' => "/depto", 'name' => "Departamento"], ['name' => "Eliminar"]
         ];
 
         return view('depto/del', compact('depto', 'id'), ['breadcrumbs' => $breadcrumbs]);
@@ -84,7 +84,7 @@ class DepartamentoController extends Controller
     public function index()
     {
         $breadcrumbs = [
-            ['link' => "/home", 'name' => "Home"], ['name' => "Departamentos"]
+            ['link' => "/DashboardAnalytics", 'name' => "Home"], ['name' => "Departamentos"]
         ];
 
         $depto = departamento::with('pais')->paginate(10);
