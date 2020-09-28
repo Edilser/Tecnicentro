@@ -184,7 +184,7 @@ Route::get('cliente/delete/{id}', 'ClienteController@delete')->name('cliente.del
 Route::resource('cliente', 'ClienteController');
 
 //EMPRESA
-Route::get('/pdfempresas', 'ControllerPdf@PDFempresas')->name('descargarempresa');
+Route::get('/empresa/download', 'EmpresaController@download')->name('empresa.download');
 //Route::get('/excelempresas', 'ControllerPdf@exportExcel')->name('descargarempresa');
 Route::post('empresa/search', 'EmpresaController@search')->name('empresa.search');
 Route::get('empresa/delete/{id}', 'EmpresaController@delete')->name('empresa.delete');

@@ -140,7 +140,7 @@
 
                                                 <input id="calleave" placeholder="Calle o Avenida" type="text"
                                                 class="form-control"
-                                                name="calleave" value="{{ $v->direccion[0]->calleave }}" required
+                                                name="calleave" value="{{ $v->direccion->count() > 0 ? $v->direccion[0]->calleave : '' }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -154,7 +154,7 @@
 
                                                 <input id="guion" placeholder="# Casa" type="text"
                                                 class="form-control"
-                                                name="guion" value="{{ $v->direccion[0]->numero }}" required
+                                                name="guion" value="{{ $v->direccion->count() > 0 ? $v->direccion[0]->numero : '' }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -168,7 +168,7 @@
 
                                                 <input id="zona" placeholder="Zona" type="text"
                                                 class="form-control"
-                                                name="zona" value="{{ $v->direccion[0]->zona }}" required
+                                                name="zona" value="{{ $v->direccion->count() > 0 ? $v->direccion[0]->zona : '' }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -182,7 +182,7 @@
 
                                                 <input id="colonia" placeholder="Colonia" type="text"
                                                 class="form-control"
-                                                name="colonia" value="{{ $v->direccion[0]->colonia }}" required
+                                                name="colonia" value="{{ $v->direccion->count() > 0 ? $v->direccion[0]->colonia: '' }}" required
                                                 data-validation-required-message='{{ __('validation.required') }}'>
                                                 <p class="help-block"></p>
                                             </div>
@@ -200,7 +200,10 @@
                                         <select required="required" placeholder="Pais" class="form-control @error('pais') is-invalid @enderror" id="pais" name="pais">
                                             <option></option>
                                             @foreach ($pais as $p)
-                                            <option value="{{ $p->id }}" {{ $v->direccion[0]->idPais == $p->id ? 'selected' : '' }} >{{ $p->pais }}</option>
+                                            <option value="{{ $p->id }}"
+                                               {{ $v->direccion->count() > 0 && $v->direccion[0]->idPais == $p->id ? 'selected' : '' }}
+
+                                              >{{ $p->pais }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -212,8 +215,13 @@
                                         </div>
 
                                         <select required="required" class="form-control @error('depto') is-invalid @enderror" id="depto" name="depto">
+
+                                            <option></option>
                                             @foreach ($depto as $d)
-                                            <option value="{{ $d->id }}" {{ $v->direccion[0]->idDepartamento == $d->id ? 'selected' : '' }} >{{ $d->departamento }}</option>
+                                            <option value="{{ $d->id }}"
+                                               {{$v->direccion->count() > 0 && $v->direccion[0]->idDepartamento == $d->id ? 'selected' : '' }}
+>
+                                              {{ $d->departamento }}</option>
                                             @endforeach
                                         </select>
 
@@ -231,9 +239,12 @@
                                             <span>Municipio</span>
                                         </div>
 
-                                        <select required="required" class="form-control @error('depto') is-invalid @enderror" id="mun" name="mun">
+                                        <select required="required" class="form-control @error('muni') is-invalid @enderror" id="mun" name="mun">
+                                          <option></option>
                                         @foreach ($mun as $m)
-                                            <option value="{{ $m->id }}" {{ $v->direccion[0]->idMunicipio == $m->id ? 'selected' : '' }} >{{ $m->municipio }}</option>
+                                            <option value="{{ $m->id }}"
+                                            {{$v->direccion->count() > 0 && $v->direccion[0]->idMunicipio == $m->id ? 'selected' : '' }}
+                                            >{{ $m->municipio }}</option>
                                         @endforeach
                                         </select>
 

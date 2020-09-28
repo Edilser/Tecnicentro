@@ -19,7 +19,7 @@ class Empresa extends Model
      * @var array
      */
     protected $hidden = [
-        'id',
+        'id', 'idDireccion'
     ];
 
 

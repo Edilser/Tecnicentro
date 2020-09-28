@@ -4,9 +4,33 @@ namespace App\Http\Controllers;
 
 use App\Empresa as empresa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
+use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+class ExportEmpresa implements FromCollection, ShouldAutoSize, WithHeadings
+{
+  /**
+   * @return \Illuminate\Support\Collection
+   */
+  public function collection()
+  {
+    return empresa::get();
+  }
+    public function headings():array
+    {
+        return ["Empresas"];
+    }
+}
 
 class EmpresaController extends Controller
 {
+  public function download()
+  {
+    return Excel::download(new ExportEmpresa(), 'Empresas.xlsx');
+  }
     /**
      * Display a listing of the resource.
      *
